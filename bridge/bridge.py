@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-esp32-boiling-hub bridge: ESP32-S3 hob camera -> Gemini boiling verdict -> MQTT.
+hob-watch bridge: ESP32-S3 hob camera -> Gemini boiling verdict -> MQTT.
 
 Pipeline per clip:
   1. S3 POSTs MJPEG AVI to http://ppl01:8099/upload
@@ -12,7 +12,6 @@ Config via environment or ~/hob-watch/config.env (KEY=VALUE lines):
   GEMINI_API_KEY   (required for live mode; empty in dry-run)
   GEMINI_MODEL     default: gemini-2.5-flash
   HOB_HTTP_PORT    default: 8099
-  HOB_BRIDGE_HOST  default: 127.0.0.1 (public IP for clip_url in verdicts)
   HOB_MQTT_HOST    default: 127.0.0.1
   HOB_MQTT_PORT    default: 1883
   HOB_TOPIC        default: hob/boiling
@@ -67,7 +66,6 @@ def env(name, default):
 
 
 HTTP_PORT = int(env("HOB_HTTP_PORT", "8099"))
-BRIDGE_HOST = env("HOB_BRIDGE_HOST", "127.0.0.1")  # public IP/hostname for clip URLs
 MQTT_HOST = env("HOB_MQTT_HOST", "127.0.0.1")
 MQTT_PORT = int(env("HOB_MQTT_PORT", "1883"))
 MQTT_USER = env("HOB_MQTT_USER", "")
@@ -78,6 +76,8 @@ GEMINI_KEY = env("GEMINI_API_KEY", "")
 GEMINI_MODEL = env("GEMINI_MODEL", "gemini-2.5-flash")
 EVERY_N = max(1, int(env("HOB_EVERY_N", "1")))
 DRY_RUN = env("HOB_DRY_RUN", "0") == "1"
+LLM_ADAPTER = env("HOB_LLM_ADAPTER", "gemini")
+ORIN_VLM_URL = env("HOB_ORIN_VLM_URL", "http://127.0.0.1:8080")
 KEEP_DONE = int(env("HOB_KEEP_DONE", "50"))
 
 logging.basicConfig(
@@ -105,44 +105,127 @@ def transcode(src: Path, dst: Path):
     subprocess.run(cmd, check=True, timeout=120)
 
 
-def ask_gemini(mp4_path: Path) -> bool:
-    data = base64.b64encode(mp4_path.read_bytes()).decode()
-    body = {
-        "contents": [{"parts": [
-            {"text": PROMPT},
-            {"inline_data": {"mime_type": "video/mp4", "data": data}},
-        ]}],
-        "generationConfig": {
-            "temperature": 0,
-            "maxOutputTokens": 32,
-            "responseMimeType": "application/json",
-        },
-    }
-    req = Request(
-        f"https://generativelanguage.googleapis.com/v1beta/models/"
-        f"{GEMINI_MODEL}:generateContent",
-        data=json.dumps(body).encode(),
-        headers={"Content-Type": "application/json", "x-goog-api-key": GEMINI_KEY},
-    )
-    try:
-        with urlopen(req, timeout=120) as resp:
-            payload = json.loads(resp.read())
-    except HTTPError as e:
-        detail = e.read().decode()[:500]
-        raise RuntimeError(f"Gemini HTTP {e.code}: {detail}")
-    except URLError as e:
-        raise RuntimeError(f"Gemini network error: {e}")
-    try:
-        text = payload["candidates"][0]["content"]["parts"][0]["text"]
-    except (KeyError, IndexError):
-        raise RuntimeError(f"Unexpected Gemini response: {str(payload)[:300]}")
-    m = re.search(r"\{[^{}]*\}", text)
-    if not m:
-        raise RuntimeError(f"No JSON in Gemini reply: {text[:200]}")
-    val = json.loads(m.group(0)).get("boiling")
-    if not isinstance(val, bool):
-        raise RuntimeError(f"Bad verdict value: {text[:200]}")
-    return val
+class LLMAdapter:
+    """Base: analyze an MP4 clip, return True if boiling."""
+    def analyze(self, mp4_path):
+        raise NotImplementedError
+    @property
+    def name(self):
+        return self.__class__.__name__
+
+
+class GeminiAdapter(LLMAdapter):
+    """Google Gemini via generateContent API (video/mp4 inline)."""
+    def analyze(self, mp4_path):
+        data = base64.b64encode(mp4_path.read_bytes()).decode()
+        body = {
+            "contents": [{"parts": [
+                {"text": PROMPT},
+                {"inline_data": {"mime_type": "video/mp4", "data": data}},
+            ]}],
+            "generationConfig": {
+                "temperature": 0,
+                "maxOutputTokens": 32,
+                "responseMimeType": "application/json",
+            },
+        }
+        req = Request(
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{GEMINI_MODEL}:generateContent",
+            data=json.dumps(body).encode(),
+            headers={"Content-Type": "application/json", "x-goog-api-key": GEMINI_KEY},
+        )
+        try:
+            with urlopen(req, timeout=120) as resp:
+                payload = json.loads(resp.read())
+        except HTTPError as e:
+            detail = e.read().decode()[:500]
+            raise RuntimeError(f"Gemini HTTP {e.code}: {detail}")
+        except URLError as e:
+            raise RuntimeError(f"Gemini network error: {e}")
+        try:
+            text = payload["candidates"][0]["content"]["parts"][0]["text"]
+        except (KeyError, IndexError):
+            raise RuntimeError(f"Unexpected Gemini response: {str(payload)[:300]}")
+        m = re.search(r"\{[^{}]*\}", text)
+        if not m:
+            raise RuntimeError(f"No JSON in Gemini reply: {text[:200]}")
+        val = json.loads(m.group(0)).get("boiling")
+        if not isinstance(val, bool):
+            raise RuntimeError(f"Bad verdict value: {text[:200]}")
+        return val
+
+
+class OrinVLMAdapter(LLMAdapter):
+    """Local VLM on Jetson Orin via llama.cpp OpenAI-compatible API."""
+    FRAMES = 4
+
+    def analyze(self, mp4_path):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            r = subprocess.run(
+                [FFMPEG, "-i", str(mp4_path), "-vf", f"fps={self.FRAMES}",
+                 "-q:v", "3", str(td / "f%02d.jpg")],
+                capture_output=True, timeout=30)
+            frames = sorted(td.glob("f*.jpg"))[:self.FRAMES]
+            if not frames:
+                raise RuntimeError("Orin: no frames extracted")
+            content = [{"type": "text",
+                        "text": PROMPT + ' Reply with JSON: {"boiling": true/false}'}]
+            for fp in frames:
+                b64 = base64.b64encode(fp.read_bytes()).decode()
+                content.append({"type": "image_url",
+                                "image_url": {"url": f"data:image/jpeg;base64,{b64}"}})
+            body = {"messages": [{"role": "user", "content": content}],
+                    "temperature": 0, "max_tokens": 32}
+            req = Request(f"{ORIN_VLM_URL}/v1/chat/completions",
+                          data=json.dumps(body).encode(),
+                          headers={"Content-Type": "application/json"})
+            try:
+                with urlopen(req, timeout=120) as resp:
+                    payload = json.loads(resp.read())
+            except HTTPError as e:
+                raise RuntimeError(f"Orin VLM HTTP {e.code}: {e.read().decode()[:300]}")
+            except URLError as e:
+                raise RuntimeError(f"Orin VLM network error: {e}")
+            try:
+                text = payload["choices"][0]["message"]["content"]
+            except (KeyError, IndexError):
+                raise RuntimeError(f"Unexpected Orin response: {str(payload)[:300]}")
+            m = re.search(r"\{[^{}]*\}", text)
+            if not m:
+                raise RuntimeError(f"No JSON in Orin reply: {text[:200]}")
+            val = json.loads(m.group(0)).get("boiling")
+            if not isinstance(val, bool):
+                raise RuntimeError(f"Bad verdict value: {text[:200]}")
+            return val
+
+
+class DryRunAdapter(LLMAdapter):
+    def analyze(self, mp4_path):
+        log.info("dry-run adapter: returning False")
+        return False
+
+
+def get_llm_adapter():
+    if DRY_RUN or LLM_ADAPTER == "dryrun":
+        return DryRunAdapter()
+    if LLM_ADAPTER == "orin":
+        return OrinVLMAdapter()
+    if not GEMINI_KEY:
+        raise RuntimeError("GEMINI_API_KEY not set (or set HOB_LLM_ADAPTER=orin)")
+    return GeminiAdapter()
+
+
+_llm_adapter = None
+def llm():
+    global _llm_adapter
+    if _llm_adapter is None:
+        _llm_adapter = get_llm_adapter()
+        log.info("LLM adapter: %s", _llm_adapter.name)
+    return _llm_adapter
+
 
 
 _mqtt_client = None
@@ -206,7 +289,7 @@ def process_dvr_run():
             if not GEMINI_KEY:
                 raise RuntimeError("GEMINI_API_KEY not set")
             t0 = time.time()
-            boiling = ask_gemini(mp4)
+            boiling = llm().analyze(mp4)
             log.info("dvr: gemini verdict=%s in %.1fs", boiling, time.time() - t0)
             verdict = {"boiling": boiling}
         if verdict is not None:
@@ -214,7 +297,7 @@ def process_dvr_run():
                 "ts": datetime.now(timezone.utc).isoformat(),
                 "clip": mp4.name,
                 "clip_url": "http://%s:%d/clip/" % (BRIDGE_HOST, HTTP_PORT) + mp4.name,
-                "model": GEMINI_MODEL,
+                "model": llm().name,
                 "source": "dvr",
             })
             publish_verdict(verdict)
@@ -256,7 +339,7 @@ def process_clip(path: Path):
             transcode(path, mp4)
             log.info("%s: transcoded in %.1fs", path.name, time.time() - t0)
             t0 = time.time()
-            boiling = ask_gemini(mp4)
+            boiling = llm().analyze(mp4)
             log.info("%s: gemini verdict=%s in %.1fs",
                      path.name, boiling, time.time() - t0)
             verdict = {"boiling": boiling}
@@ -265,7 +348,7 @@ def process_clip(path: Path):
                 "ts": datetime.now(timezone.utc).isoformat(),
                 "clip": path.name,
                 "clip_url": "http://%s:%d/clip/" % (BRIDGE_HOST, HTTP_PORT) + mp4.name,
-                "model": GEMINI_MODEL,
+                "model": llm().name,
             })
             publish_verdict(verdict)
     except Exception as e:
