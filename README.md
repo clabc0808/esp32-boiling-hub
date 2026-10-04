@@ -145,6 +145,20 @@ esp32-boiling-hub/
 └── README.md
 ```
 
+## LLM Adapters
+
+The bridge uses a pluggable adapter pattern for vision models. Switch via `HOB_LLM_ADAPTER` in `config.env`:
+
+| Adapter | Value | Description |
+|---|---|---|
+| `GeminiAdapter` | `gemini` | Google Gemini API (default). Needs `GEMINI_API_KEY`. Best quality. |
+| `OrinVLMAdapter` | `orin` | Local VLM on Jetson Orin via llama.cpp OpenAI-compatible API. Needs `HOB_ORIN_VLM_URL`. No cloud, no API costs. |
+| `DryRunAdapter` | `dryrun` | Testing. Always returns `{"boiling": false}` without calling any LLM. |
+
+To add a new provider, subclass `LLMAdapter` and implement `analyze(mp4_path) -> bool`.
+
+The Orin adapter extracts 4 frames from the MP4 via ffmpeg, sends them as base64 images to the llama.cpp `/v1/chat/completions` endpoint, and parses the JSON verdict.
+
 ## Key design decisions
 
 ### Why the OV5640 uses software JPEG
