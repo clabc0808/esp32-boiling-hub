@@ -1,1 +1,448 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiIKZXNwMzItYm9pbGluZy1odWIgYnJpZGdlOiBFU1AzMi1TMyBob2IgY2FtZXJhIC0+IEdlbWluaSBib2lsaW5nIHZlcmRpY3QgLT4gTVFUVC4KClBpcGVsaW5lIHBlciBjbGlwOgogIDEuIFMzIFBPU1RzIE1KUEVHIEFWSSB0byBodHRwOi8vcHBsMDE6ODA5OS91cGxvYWQKICAyLiBmZm1wZWcgdHJhbnNjb2RlcyBBVkkgLT4gSC4yNjQgTVA0CiAgMy4gTVA0IHNlbnQgdG8gR2VtaW5pOyBwcm9tcHQgZGVtYW5kcyBzdHJpY3QgSlNPTiB7ImJvaWxpbmciOiBib29sfQogIDQuIFZlcmRpY3QgcHVibGlzaGVkIChyZXRhaW5lZCkgdG8gTVFUVCB0b3BpYyBob2IvYm9pbGluZyBmb3IgSG9tZSBBc3Npc3RhbnQKCkNvbmZpZyB2aWEgZW52aXJvbm1lbnQgb3Igfi9ob2Itd2F0Y2gvY29uZmlnLmVudiAoS0VZPVZBTFVFIGxpbmVzKToKICBHRU1JTklfQVBJX0tFWSAgIChyZXF1aXJlZCBmb3IgbGl2ZSBtb2RlOyBlbXB0eSBpbiBkcnktcnVuKQogIEdFTUlOSV9NT0RFTCAgICAgZGVmYXVsdDogZ2VtaW5pLTIuNS1mbGFzaAogIEhPQl9IVFRQX1BPUlQgICAgZGVmYXVsdDogODA5OQogIEhPQl9CUklER0VfSE9TVCAgZGVmYXVsdDogMTI3LjAuMC4xIChwdWJsaWMgSVAgZm9yIGNsaXBfdXJsIGluIHZlcmRpY3RzKQogIEhPQl9NUVRUX0hPU1QgICAgZGVmYXVsdDogMTI3LjAuMC4xCiAgSE9CX01RVFRfUE9SVCAgICBkZWZhdWx0OiAxODgzCiAgSE9CX1RPUElDICAgICAgICBkZWZhdWx0OiBob2IvYm9pbGluZwogIEhPQl9GRk1QRUcgICAgICAgZGVmYXVsdDogL2hvbWUvcHBsL2Jpbi9mZm1wZWcKICBIT0JfRVZFUllfTiAgICAgIGRlZmF1bHQ6IDEgKHNlbmQgZXZlcnkgTnRoIGNsaXAgdG8gR2VtaW5pKQogIEhPQl9EUllfUlVOICAgICAgZGVmYXVsdDogMCAoMSA9IHNraXAgR2VtaW5pLCBwdWJsaXNoIGRyeS1ydW4gdmVyZGljdCkKICBIT0JfS0VFUF9ET05FICAgIGRlZmF1bHQ6IDUwICh0cmltIHByb2Nlc3NlZCBjbGlwcyBiZXlvbmQgdGhpcyBtYW55KQoiIiIKCmltcG9ydCBiYXNlNjQKaW1wb3J0IGpzb24KaW1wb3J0IGxvZ2dpbmcKaW1wb3J0IG9zCmltcG9ydCBxdWV1ZQppbXBvcnQgcmUKaW1wb3J0IHNodXRpbAppbXBvcnQgc3VicHJvY2VzcwppbXBvcnQgdGhyZWFkaW5nCmltcG9ydCB0aW1lCmZyb20gZGF0ZXRpbWUgaW1wb3J0IGRhdGV0aW1lLCB0aW1lem9uZQpmcm9tIGh0dHAuc2VydmVyIGltcG9ydCBCYXNlSFRUUFJlcXVlc3RIYW5kbGVyLCBUaHJlYWRpbmdIVFRQU2VydmVyCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApmcm9tIHVybGxpYi5yZXF1ZXN0IGltcG9ydCBSZXF1ZXN0LCB1cmxvcGVuCmZyb20gdXJsbGliLmVycm9yIGltcG9ydCBIVFRQRXJyb3IsIFVSTEVycm9yCgppbXBvcnQgcGFoby5tcXR0LmNsaWVudCBhcyBtcXR0CgpIT01FID0gUGF0aC5ob21lKCkKQkFTRSA9IEhPTUUgLyAiaG9iLXdhdGNoIgpJTkJPWCA9IEJBU0UgLyAiaW5ib3giCkRPTkUgPSBCQVNFIC8gImRvbmUiClNOQVAgPSBCQVNFIC8gInNuYXBzaG90LmpwZyIKQlVSU1RTID0gQkFTRSAvICJidXJzdHMiCkJVUlNUUy5ta2RpcihleGlzdF9vaz1UcnVlKQpCVVJTVF9LRUVQID0gNDAKRFZSRElSID0gQkFTRSAvICJkdnIiCkRWUkRJUi5ta2RpcihleGlzdF9vaz1UcnVlKQpEVlJfRlJBTUVTID0gMTAKX2R2cl9sb2NrID0gdGhyZWFkaW5nLkxvY2soKQoKX2NmZyA9IEJBU0UgLyAiY29uZmlnLmVudiIKaWYgX2NmZy5leGlzdHMoKToKICAgIGZvciBfbGluZSBpbiBfY2ZnLnJlYWRfdGV4dCgpLnNwbGl0bGluZXMoKToKICAgICAgICBfbGluZSA9IF9saW5lLnN0cmlwKCkKICAgICAgICBpZiBfbGluZSBhbmQgbm90IF9saW5lLnN0YXJ0c3dpdGgoIiMiKSBhbmQgIj0iIGluIF9saW5lOgogICAgICAgICAgICBfaywgX3YgPSBfbGluZS5zcGxpdCgiPSIsIDEpCiAgICAgICAgICAgIG9zLmVudmlyb24uc2V0ZGVmYXVsdChfay5zdHJpcCgpLCBfdi5zdHJpcCgpLnN0cmlwKCciJykuc3RyaXAoIiciKSkKCgpkZWYgZW52KG5hbWUsIGRlZmF1bHQpOgogICAgcmV0dXJuIG9zLmVudmlyb24uZ2V0KG5hbWUsIGRlZmF1bHQpCgoKSFRUUF9QT1JUID0gaW50KGVudigiSE9CX0hUVFBfUE9SVCIsICI4MDk5IikpCkJSSURHRV9IT1NUID0gZW52KCJIT0JfQlJJREdFX0hPU1QiLCAiMTI3LjAuMC4xIikgICMgcHVibGljIElQL2hvc3RuYW1lIGZvciBjbGlwIFVSTHMKTVFUVF9IT1NUID0gZW52KCJIT0JfTVFUVF9IT1NUIiwgIjEyNy4wLjAuMSIpCk1RVFRfUE9SVCA9IGludChlbnYoIkhPQl9NUVRUX1BPUlQiLCAiMTg4MyIpKQpNUVRUX1VTRVIgPSBlbnYoIkhPQl9NUVRUX1VTRVIiLCAiIikKTVFUVF9QQVNTID0gZW52KCJIT0JfTVFUVF9QQVNTIiwgIiIpClRPUElDID0gZW52KCJIT0JfVE9QSUMiLCAiaG9iL2JvaWxpbmciKQpGRk1QRUcgPSBlbnYoIkhPQl9GRk1QRUciLCBzdHIoSE9NRSAvICJiaW4iIC8gImZmbXBlZyIpKQpHRU1JTklfS0VZID0gZW52KCJHRU1JTklfQVBJX0tFWSIsICIiKQpHRU1JTklfTU9ERUwgPSBlbnYoIkdFTUlOSV9NT0RFTCIsICJnZW1pbmktMi41LWZsYXNoIikKRVZFUllfTiA9IG1heCgxLCBpbnQoZW52KCJIT0JfRVZFUllfTiIsICIxIikpKQpEUllfUlVOID0gZW52KCJIT0JfRFJZX1JVTiIsICIwIikgPT0gIjEiCktFRVBfRE9ORSA9IGludChlbnYoIkhPQl9LRUVQX0RPTkUiLCAiNTAiKSkKCmxvZ2dpbmcuYmFzaWNDb25maWcoCiAgICBsZXZlbD1sb2dnaW5nLklORk8sIGZvcm1hdD0iJShhc2N0aW1lKXMgJShsZXZlbG5hbWUpcyAlKG1lc3NhZ2UpcyIKKQpsb2cgPSBsb2dnaW5nLmdldExvZ2dlcigiaG9iLXdhdGNoIikKCndvcmsgPSBxdWV1ZS5RdWV1ZSgpCmNsaXBfY291bnRlciA9IDAKY291bnRlcl9sb2NrID0gdGhyZWFkaW5nLkxvY2soKQoKUFJPTVBUID0gKAogICAgIllvdSBhcmUgd2F0Y2hpbmcgYSBwb3Qgb24gYW4gaW5kdWN0aW9uIGhvYi4gTG9vayBhdCB0aGUgd2F0ZXIgc3VyZmFjZS4gIgogICAgIklzIHRoZSB3YXRlciBhdCBhIHJvbGxpbmcgYm9pbCAodmlnb3JvdXMgYnViYmxpbmcgYWNyb3NzIHRoZSBzdXJmYWNlKT8gIgogICAgJ1JlcGx5IHdpdGggT05MWSB0aGlzIEpTT04gYW5kIG5vdGhpbmcgZWxzZTogeyJib2lsaW5nIjogdHJ1ZX0gb3IgeyJib2lsaW5nIjogZmFsc2V9JwopCgoKZGVmIHRyYW5zY29kZShzcmM6IFBhdGgsIGRzdDogUGF0aCk6CiAgICBjbWQgPSBbCiAgICAgICAgRkZNUEVHLCAiLXkiLCAiLXYiLCAiZXJyb3IiLCAiLWkiLCBzdHIoc3JjKSwKICAgICAgICAiLWM6diIsICJsaWJ4MjY0IiwgIi1wcmVzZXQiLCAidmVyeWZhc3QiLCAiLWNyZiIsICIyMyIsCiAgICAgICAgIi1waXhfZm10IiwgInl1djQyMHAiLCAiLWFuIiwgc3RyKGRzdCksCiAgICBdCiAgICBzdWJwcm9jZXNzLnJ1bihjbWQsIGNoZWNrPVRydWUsIHRpbWVvdXQ9MTIwKQoKCmRlZiBhc2tfZ2VtaW5pKG1wNF9wYXRoOiBQYXRoKSAtPiBib29sOgogICAgZGF0YSA9IGJhc2U2NC5iNjRlbmNvZGUobXA0X3BhdGgucmVhZF9ieXRlcygpKS5kZWNvZGUoKQogICAgYm9keSA9IHsKICAgICAgICAiY29udGVudHMiOiBbeyJwYXJ0cyI6IFsKICAgICAgICAgICAgeyJ0ZXh0IjogUFJPTVBUfSwKICAgICAgICAgICAgeyJpbmxpbmVfZGF0YSI6IHsibWltZV90eXBlIjogInZpZGVvL21wNCIsICJkYXRhIjogZGF0YX19LAogICAgICAgIF19XSwKICAgICAgICAiZ2VuZXJhdGlvbkNvbmZpZyI6IHsKICAgICAgICAgICAgInRlbXBlcmF0dXJlIjogMCwKICAgICAgICAgICAgIm1heE91dHB1dFRva2VucyI6IDMyLAogICAgICAgICAgICAicmVzcG9uc2VNaW1lVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICAgICAgICB9LAogICAgfQogICAgcmVxID0gUmVxdWVzdCgKICAgICAgICBmImh0dHBzOi8vZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29tL3YxYmV0YS9tb2RlbHMvIgogICAgICAgIGYie0dFTUlOSV9NT0RFTH06Z2VuZXJhdGVDb250ZW50IiwKICAgICAgICBkYXRhPWpzb24uZHVtcHMoYm9keSkuZW5jb2RlKCksCiAgICAgICAgaGVhZGVycz17IkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwgIngtZ29vZy1hcGkta2V5IjogR0VNSU5JX0tFWX0sCiAgICApCiAgICB0cnk6CiAgICAgICAgd2l0aCB1cmxvcGVuKHJlcSwgdGltZW91dD0xMjApIGFzIHJlc3A6CiAgICAgICAgICAgIHBheWxvYWQgPSBqc29uLmxvYWRzKHJlc3AucmVhZCgpKQogICAgZXhjZXB0IEhUVFBFcnJvciBhcyBlOgogICAgICAgIGRldGFpbCA9IGUucmVhZCgpLmRlY29kZSgpWzo1MDBdCiAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKGYiR2VtaW5pIEhUVFAge2UuY29kZX06IHtkZXRhaWx9IikKICAgIGV4Y2VwdCBVUkxFcnJvciBhcyBlOgogICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcihmIkdlbWluaSBuZXR3b3JrIGVycm9yOiB7ZX0iKQogICAgdHJ5OgogICAgICAgIHRleHQgPSBwYXlsb2FkWyJjYW5kaWRhdGVzIl1bMF1bImNvbnRlbnQiXVsicGFydHMiXVswXVsidGV4dCJdCiAgICBleGNlcHQgKEtleUVycm9yLCBJbmRleEVycm9yKToKICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoZiJVbmV4cGVjdGVkIEdlbWluaSByZXNwb25zZToge3N0cihwYXlsb2FkKVs6MzAwXX0iKQogICAgbSA9IHJlLnNlYXJjaChyIlx7W157fV0qXH0iLCB0ZXh0KQogICAgaWYgbm90IG06CiAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKGYiTm8gSlNPTiBpbiBHZW1pbmkgcmVwbHk6IHt0ZXh0WzoyMDBdfSIpCiAgICB2YWwgPSBqc29uLmxvYWRzKG0uZ3JvdXAoMCkpLmdldCgiYm9pbGluZyIpCiAgICBpZiBub3QgaXNpbnN0YW5jZSh2YWwsIGJvb2wpOgogICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcihmIkJhZCB2ZXJkaWN0IHZhbHVlOiB7dGV4dFs6MjAwXX0iKQogICAgcmV0dXJuIHZhbAoKCl9tcXR0X2NsaWVudCA9IE5vbmUKX21xdHRfbG9jayA9IHRocmVhZGluZy5Mb2NrKCkKCgpkZWYgZ2V0X21xdHQoKToKICAgIGdsb2JhbCBfbXF0dF9jbGllbnQKICAgIHdpdGggX21xdHRfbG9jazoKICAgICAgICBpZiBfbXF0dF9jbGllbnQgaXMgTm9uZToKICAgICAgICAgICAgYyA9IG1xdHQuQ2xpZW50KG1xdHQuQ2FsbGJhY2tBUElWZXJzaW9uLlZFUlNJT04yKQogICAgICAgICAgICBpZiBNUVRUX1VTRVI6CiAgICAgICAgICAgICAgICBjLnVzZXJuYW1lX3B3X3NldChNUVRUX1VTRVIsIE1RVFRfUEFTUykKICAgICAgICAgICAgYy5jb25uZWN0KE1RVFRfSE9TVCwgTVFUVF9QT1JULCBrZWVwYWxpdmU9MzApCiAgICAgICAgICAgIGMubG9vcF9zdGFydCgpCiAgICAgICAgICAgIF9tcXR0X2NsaWVudCA9IGMKICAgICAgICByZXR1cm4gX21xdHRfY2xpZW50CgoKZGVmIHB1Ymxpc2hfdmVyZGljdCh2ZXJkaWN0OiBkaWN0KToKICAgIGdldF9tcXR0KCkucHVibGlzaChUT1BJQywganNvbi5kdW1wcyh2ZXJkaWN0KSwgcW9zPTEsIHJldGFpbj1UcnVlKQogICAgbG9nLmluZm8oInB1Ymxpc2hlZCAlcyAtPiAlcyIsIFRPUElDLCB2ZXJkaWN0KQoKCgpkZWYgcHJvY2Vzc19kdnJfcnVuKCk6CiAgICAiIiJTdGl0Y2ggb2xkZXN0IERWUl9GUkFNRVMgSlBFR3MgdG8gTVA0LCBhc2sgR2VtaW5pLCBwdWJsaXNoIHZlcmRpY3QuIiIiCiAgICBnbG9iYWwgY2xpcF9jb3VudGVyCiAgICB3aXRoIF9kdnJfbG9jazoKICAgICAgICBmaWxlcyA9IHNvcnRlZChEVlJESVIuZ2xvYigiZHZyXyouanBnIikpCiAgICAgICAgaWYgbGVuKGZpbGVzKSA8IERWUl9GUkFNRVM6CiAgICAgICAgICAgIHJldHVybgogICAgICAgIGJhdGNoID0gZmlsZXNbOkRWUl9GUkFNRVNdCiAgICB0cyA9IGRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLnN0cmZ0aW1lKCIlWSVtJWRUJUglTSVTIikKICAgIGxzdCA9IEJBU0UgLyAoImR2cl8lcy50eHQiICUgdHMpCiAgICBtcDQgPSBCQVNFIC8gKCJkdnJfJXMubXA0IiAlIHRzKQogICAgdHJ5OgogICAgICAgIHdpdGggb3Blbihsc3QsICJ3IikgYXMgZjoKICAgICAgICAgICAgZm9yIGZwIGluIGJhdGNoOgogICAgICAgICAgICAgICAgZi53cml0ZSgiZmlsZSAnJXMnXG4iICUgZnApCiAgICAgICAgciA9IHN1YnByb2Nlc3MucnVuKAogICAgICAgICAgICBbRkZNUEVHLCAiLXkiLCAiLWYiLCAiY29uY2F0IiwgIi1zYWZlIiwgIjAiLCAiLWkiLCBzdHIobHN0KSwKICAgICAgICAgICAgICItZnJhbWVyYXRlIiwgIjIiLCAiLWM6diIsICJsaWJ4MjY0IiwgIi1waXhfZm10IiwgInl1djQyMHAiLAogICAgICAgICAgICAgc3RyKG1wNCldLAogICAgICAgICAgICBjYXB0dXJlX291dHB1dD1UcnVlLCB0aW1lb3V0PTYwKQogICAgICAgIGlmIHIucmV0dXJuY29kZSAhPSAwIG9yIG5vdCBtcDQuZXhpc3RzKCk6CiAgICAgICAgICAgIGxvZy5lcnJvcigiZHZyIGZmbXBlZyBmYWlsZWQ6ICVzIiwgci5zdGRlcnIuZGVjb2RlKClbLTMwMDpdKQogICAgICAgICAgICByZXR1cm4KICAgICAgICBsb2cuaW5mbygiZHZyIHN0aXRjaGVkICVkIGZyYW1lcyAtPiAlcyAoJWQgYnl0ZXMpIiwKICAgICAgICAgICAgICAgICBsZW4oYmF0Y2gpLCBtcDQubmFtZSwgbXA0LnN0YXQoKS5zdF9zaXplKQogICAgICAgIHdpdGggY291bnRlcl9sb2NrOgogICAgICAgICAgICBjbGlwX2NvdW50ZXIgKz0gMQogICAgICAgICAgICBuID0gY2xpcF9jb3VudGVyCiAgICAgICAgaWYgbiAlIEVWRVJZX04gIT0gMDoKICAgICAgICAgICAgbG9nLmluZm8oImR2cjogc2tpcHBlZCBieSBIT0JfRVZFUllfTj0lZCIsIEVWRVJZX04pCiAgICAgICAgICAgIHZlcmRpY3QgPSBOb25lCiAgICAgICAgZWxpZiBEUllfUlVOOgogICAgICAgICAgICBsb2cuaW5mbygiZHZyOiBkcnkgcnVuLCBza2lwcGluZyBHZW1pbmkiKQogICAgICAgICAgICB2ZXJkaWN0ID0geyJib2lsaW5nIjogRmFsc2UsICJkcnlfcnVuIjogVHJ1ZX0KICAgICAgICBlbHNlOgogICAgICAgICAgICBpZiBub3QgR0VNSU5JX0tFWToKICAgICAgICAgICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiR0VNSU5JX0FQSV9LRVkgbm90IHNldCIpCiAgICAgICAgICAgIHQwID0gdGltZS50aW1lKCkKICAgICAgICAgICAgYm9pbGluZyA9IGFza19nZW1pbmkobXA0KQogICAgICAgICAgICBsb2cuaW5mbygiZHZyOiBnZW1pbmkgdmVyZGljdD0lcyBpbiAlLjFmcyIsIGJvaWxpbmcsIHRpbWUudGltZSgpIC0gdDApCiAgICAgICAgICAgIHZlcmRpY3QgPSB7ImJvaWxpbmciOiBib2lsaW5nfQogICAgICAgIGlmIHZlcmRpY3QgaXMgbm90IE5vbmU6CiAgICAgICAgICAgIHZlcmRpY3QudXBkYXRlKHsKICAgICAgICAgICAgICAgICJ0cyI6IGRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLmlzb2Zvcm1hdCgpLAogICAgICAgICAgICAgICAgImNsaXAiOiBtcDQubmFtZSwKICAgICAgICAgICAgICAgICJjbGlwX3VybCI6ICJodHRwOi8vJXM6JWQvY2xpcC8iICUgKEJSSURHRV9IT1NULCBIVFRQX1BPUlQpICsgbXA0Lm5hbWUsCiAgICAgICAgICAgICAgICAibW9kZWwiOiBHRU1JTklfTU9ERUwsCiAgICAgICAgICAgICAgICAic291cmNlIjogImR2ciIsCiAgICAgICAgICAgIH0pCiAgICAgICAgICAgIHB1Ymxpc2hfdmVyZGljdCh2ZXJkaWN0KQogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgIGxvZy5lcnJvcigiZHZyIHByb2Nlc3MgZmFpbGVkOiAlcyIsIGUpCiAgICBmaW5hbGx5OgogICAgICAgIGZvciBmcCBpbiBiYXRjaDoKICAgICAgICAgICAgZnAudW5saW5rKG1pc3Npbmdfb2s9VHJ1ZSkKICAgICAgICBsc3QudW5saW5rKG1pc3Npbmdfb2s9VHJ1ZSkKICAgICAgICBpZiBtcDQuZXhpc3RzKCk6CiAgICAgICAgICAgIChET05FIC8gbXA0Lm5hbWUpLndyaXRlX2J5dGVzKG1wNC5yZWFkX2J5dGVzKCkpCiAgICAgICAgICAgIG1wNC51bmxpbmsobWlzc2luZ19vaz1UcnVlKQoKZGVmIHRyaW1fZG9uZSgpOgogICAgc3RlbXMgPSBzb3J0ZWQoe3Auc3RlbSBmb3IgcCBpbiBET05FLmdsb2IoImhvYl8qIil9KQogICAgZm9yIHN0ZW0gaW4gc3RlbXNbOiBtYXgoMCwgbGVuKHN0ZW1zKSAtIEtFRVBfRE9ORSldOgogICAgICAgIGZvciBwIGluIERPTkUuZ2xvYihzdGVtICsgIi4qIik6CiAgICAgICAgICAgIHAudW5saW5rKG1pc3Npbmdfb2s9VHJ1ZSkKCgpkZWYgcHJvY2Vzc19jbGlwKHBhdGg6IFBhdGgpOgogICAgZ2xvYmFsIGNsaXBfY291bnRlcgogICAgd2l0aCBjb3VudGVyX2xvY2s6CiAgICAgICAgY2xpcF9jb3VudGVyICs9IDEKICAgICAgICBuID0gY2xpcF9jb3VudGVyCiAgICBzdGVtID0gcGF0aC5zdGVtCiAgICBtcDQgPSBJTkJPWCAvIChzdGVtICsgIi5tcDQiKQogICAgdHJ5OgogICAgICAgIGlmIG4gJSBFVkVSWV9OICE9IDA6CiAgICAgICAgICAgIGxvZy5pbmZvKCIlczogc2tpcHBlZCBieSBIT0JfRVZFUllfTj0lZCIsIHBhdGgubmFtZSwgRVZFUllfTikKICAgICAgICAgICAgdmVyZGljdCA9IE5vbmUKICAgICAgICBlbGlmIERSWV9SVU46CiAgICAgICAgICAgIGxvZy5pbmZvKCIlczogZHJ5IHJ1biwgc2tpcHBpbmcgR2VtaW5pIiwgcGF0aC5uYW1lKQogICAgICAgICAgICB2ZXJkaWN0ID0geyJib2lsaW5nIjogRmFsc2UsICJkcnlfcnVuIjogVHJ1ZX0KICAgICAgICBlbHNlOgogICAgICAgICAgICBpZiBub3QgR0VNSU5JX0tFWToKICAgICAgICAgICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiR0VNSU5JX0FQSV9LRVkgbm90IHNldCIpCiAgICAgICAgICAgIHQwID0gdGltZS50aW1lKCkKICAgICAgICAgICAgdHJhbnNjb2RlKHBhdGgsIG1wNCkKICAgICAgICAgICAgbG9nLmluZm8oIiVzOiB0cmFuc2NvZGVkIGluICUuMWZzIiwgcGF0aC5uYW1lLCB0aW1lLnRpbWUoKSAtIHQwKQogICAgICAgICAgICB0MCA9IHRpbWUudGltZSgpCiAgICAgICAgICAgIGJvaWxpbmcgPSBhc2tfZ2VtaW5pKG1wNCkKICAgICAgICAgICAgbG9nLmluZm8oIiVzOiBnZW1pbmkgdmVyZGljdD0lcyBpbiAlLjFmcyIsCiAgICAgICAgICAgICAgICAgICAgIHBhdGgubmFtZSwgYm9pbGluZywgdGltZS50aW1lKCkgLSB0MCkKICAgICAgICAgICAgdmVyZGljdCA9IHsiYm9pbGluZyI6IGJvaWxpbmd9CiAgICAgICAgaWYgdmVyZGljdCBpcyBub3QgTm9uZToKICAgICAgICAgICAgdmVyZGljdC51cGRhdGUoewogICAgICAgICAgICAgICAgInRzIjogZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0YykuaXNvZm9ybWF0KCksCiAgICAgICAgICAgICAgICAiY2xpcCI6IHBhdGgubmFtZSwKICAgICAgICAgICAgICAgICJjbGlwX3VybCI6ICJodHRwOi8vJXM6JWQvY2xpcC8iICUgKEJSSURHRV9IT1NULCBIVFRQX1BPUlQpICsgbXA0Lm5hbWUsCiAgICAgICAgICAgICAgICAibW9kZWwiOiBHRU1JTklfTU9ERUwsCiAgICAgICAgICAgIH0pCiAgICAgICAgICAgIHB1Ymxpc2hfdmVyZGljdCh2ZXJkaWN0KQogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgIGxvZy5lcnJvcigiJXM6IEZBSUxFRDogJXMiLCBwYXRoLm5hbWUsIGUpCiAgICBmaW5hbGx5OgogICAgICAgIHRyeToKICAgICAgICAgICAgc2h1dGlsLm1vdmUoc3RyKHBhdGgpLCBET05FIC8gcGF0aC5uYW1lKQogICAgICAgICAgICBpZiBtcDQuZXhpc3RzKCk6CiAgICAgICAgICAgICAgICBzaHV0aWwubW92ZShzdHIobXA0KSwgRE9ORSAvIG1wNC5uYW1lKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgbG9nLmVycm9yKCJtb3ZlIHRvIGRvbmUgZmFpbGVkOiAlcyIsIGUpCiAgICAgICAgdHJpbV9kb25lKCkKCgpkZWYgd29ya2VyKCk6CiAgICB3aGlsZSBUcnVlOgogICAgICAgIHByb2Nlc3NfY2xpcCh3b3JrLmdldCgpKQoKCmNsYXNzIEhhbmRsZXIoQmFzZUhUVFBSZXF1ZXN0SGFuZGxlcik6CiAgICBkZWYgbG9nX21lc3NhZ2Uoc2VsZiwgKmEpOgogICAgICAgIHBhc3MKCiAgICBkZWYgX2pzb24oc2VsZiwgY29kZSwgb2JqKToKICAgICAgICBib2R5ID0ganNvbi5kdW1wcyhvYmopLmVuY29kZSgpCiAgICAgICAgc2VsZi5zZW5kX3Jlc3BvbnNlKGNvZGUpCiAgICAgICAgc2VsZi5zZW5kX2hlYWRlcigiQ29udGVudC1UeXBlIiwgImFwcGxpY2F0aW9uL2pzb24iKQogICAgICAgIHNlbGYuc2VuZF9oZWFkZXIoIkNvbnRlbnQtTGVuZ3RoIiwgc3RyKGxlbihib2R5KSkpCiAgICAgICAgc2VsZi5lbmRfaGVhZGVycygpCiAgICAgICAgc2VsZi53ZmlsZS53cml0ZShib2R5KQoKICAgIGRlZiBkb19HRVQoc2VsZik6CiAgICAgICAgcGF0aCA9IHNlbGYucGF0aC5zcGxpdCgiPyIsIDEpWzBdICAjIGlnbm9yZSBxdWVyeSBzdHJpbmdzIChlLmcuIGNhY2hlLWJ1c3RlcnMpCiAgICAgICAgaWYgcGF0aCA9PSAiL2hlYWx0aCI6CiAgICAgICAgICAgIHNlbGYuX2pzb24oMjAwLCB7Im9rIjogVHJ1ZX0pCiAgICAgICAgZWxpZiBwYXRoID09ICIvbGF0ZXN0IjoKICAgICAgICAgICAgbXA0cyA9IHNvcnRlZChET05FLmdsb2IoImhvYl8qLm1wNCIpKQogICAgICAgICAgICBpZiBub3QgbXA0czoKICAgICAgICAgICAgICAgIHNlbGYuc2VuZF9yZXNwb25zZSg0MDQpCiAgICAgICAgICAgICAgICBzZWxmLmVuZF9oZWFkZXJzKCkKICAgICAgICAgICAgICAgIHJldHVybgogICAgICAgICAgICBkYXRhID0gbXA0c1stMV0ucmVhZF9ieXRlcygpCiAgICAgICAgICAgIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApCiAgICAgICAgICAgIHNlbGYuc2VuZF9oZWFkZXIoIkNvbnRlbnQtVHlwZSIsICJ2aWRlby9tcDQiKQogICAgICAgICAgICBzZWxmLnNlbmRfaGVhZGVyKCJDb250ZW50LUxlbmd0aCIsIHN0cihsZW4oZGF0YSkpKQogICAgICAgICAgICBzZWxmLnNlbmRfaGVhZGVyKCJDYWNoZS1Db250cm9sIiwgIm5vLXN0b3JlIikKICAgICAgICAgICAgc2VsZi5lbmRfaGVhZGVycygpCiAgICAgICAgICAgIHNlbGYud2ZpbGUud3JpdGUoZGF0YSkKICAgICAgICBlbGlmIHBhdGggPT0gIi92aWV3IjoKICAgICAgICAgICAgaHRtbCA9ICgiPGh0bWw+PGhlYWQ+PG1ldGEgY2hhcnNldD0ndXRmLTgnPjx0aXRsZT5ob2IgY2FtPC90aXRsZT48L2hlYWQ+PGJvZHkgc3R5bGU9J21hcmdpbjowO2JhY2tncm91bmQ6IzExMSc+IgogICAgICAgICAgICAgICAgICAgICI8dmlkZW8gc3JjPScvbGF0ZXN0JyBzdHlsZT0nd2lkdGg6MTAwdnc7aGVpZ2h0OjEwMHZoO29iamVjdC1maXQ6Y29udGFpbicgYXV0b3BsYXkgbXV0ZWQgbG9vcCBjb250cm9scz48L3ZpZGVvPiIKICAgICAgICAgICAgICAgICAgICAiPHNjcmlwdD5zZXRUaW1lb3V0KCgpPT5sb2NhdGlvbi5yZWxvYWQoKSwzNTAwMCk8L3NjcmlwdD4iCiAgICAgICAgICAgICAgICAgICAgIjwvYm9keT48L2h0bWw+IikuZW5jb2RlKCkKICAgICAgICAgICAgc2VsZi5zZW5kX3Jlc3BvbnNlKDIwMCkKICAgICAgICAgICAgc2VsZi5zZW5kX2hlYWRlcigiQ29udGVudC1UeXBlIiwgInRleHQvaHRtbCIpCiAgICAgICAgICAgIHNlbGYuc2VuZF9oZWFkZXIoIkNvbnRlbnQtTGVuZ3RoIiwgc3RyKGxlbihodG1sKSkpCiAgICAgICAgICAgIHNlbGYuZW5kX2hlYWRlcnMoKQogICAgICAgICAgICBzZWxmLndmaWxlLndyaXRlKGh0bWwpCiAgICAgICAgZWxpZiBwYXRoLnN0YXJ0c3dpdGgoIi9jbGlwLyIpOgogICAgICAgICAgICBuYW1lID0gcGF0aFtsZW4oIi9jbGlwLyIpOl0KICAgICAgICAgICAgaWYgbm90IG5hbWUgb3IgIi8iIGluIG5hbWUgb3IgIi4uIiBpbiBuYW1lIG9yIG5vdCBuYW1lLmVuZHN3aXRoKCIubXA0Iik6CiAgICAgICAgICAgICAgICBzZWxmLnNlbmRfcmVzcG9uc2UoNDAwKTsgc2VsZi5lbmRfaGVhZGVycygpOyByZXR1cm4KICAgICAgICAgICAgZnAgPSBET05FIC8gbmFtZQogICAgICAgICAgICBpZiBub3QgZnAuZXhpc3RzKCk6CiAgICAgICAgICAgICAgICBzZWxmLnNlbmRfcmVzcG9uc2UoNDA0KTsgc2VsZi5lbmRfaGVhZGVycygpOyByZXR1cm4KICAgICAgICAgICAgZGF0YSA9IGZwLnJlYWRfYnl0ZXMoKQogICAgICAgICAgICBzZWxmLnNlbmRfcmVzcG9uc2UoMjAwKQogICAgICAgICAgICBzZWxmLnNlbmRfaGVhZGVyKCJDb250ZW50LVR5cGUiLCAidmlkZW8vbXA0IikKICAgICAgICAgICAgc2VsZi5zZW5kX2hlYWRlcigiQ29udGVudC1MZW5ndGgiLCBzdHIobGVuKGRhdGEpKSkKICAgICAgICAgICAgc2VsZi5lbmRfaGVhZGVycygpCiAgICAgICAgICAgIHNlbGYud2ZpbGUud3JpdGUoZGF0YSkKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZWxpZiBwYXRoID09ICIvc25hcHNob3QuanBnIjoKICAgICAgICAgICAgaWYgbm90IFNOQVAuZXhpc3RzKCk6CiAgICAgICAgICAgICAgICBzZWxmLnNlbmRfcmVzcG9uc2UoNDA0KQogICAgICAgICAgICAgICAgc2VsZi5lbmRfaGVhZGVycygpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZGF0YSA9IFNOQVAucmVhZF9ieXRlcygpCiAgICAgICAgICAgIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApCiAgICAgICAgICAgIHNlbGYuc2VuZF9oZWFkZXIoIkNvbnRlbnQtVHlwZSIsICJpbWFnZS9qcGVnIikKICAgICAgICAgICAgc2VsZi5zZW5kX2hlYWRlcigiQ29udGVudC1MZW5ndGgiLCBzdHIobGVuKGRhdGEpKSkKICAgICAgICAgICAgc2VsZi5zZW5kX2hlYWRlcigiQ2FjaGUtQ29udHJvbCIsICJuby1zdG9yZSIpCiAgICAgICAgICAgIHNlbGYuZW5kX2hlYWRlcnMoKQogICAgICAgICAgICBzZWxmLndmaWxlLndyaXRlKGRhdGEpCiAgICAgICAgZWxpZiBwYXRoID09ICIvdGVzdCI6CiAgICAgICAgICAgIGh0bWwgPSAoCiAgICAgICAgICAgICAgICAiPGh0bWw+PGhlYWQ+PG1ldGEgY2hhcnNldD0ndXRmLTgnPiIKICAgICAgICAgICAgICAgICI8bWV0YSBuYW1lPSd2aWV3cG9ydCcgY29udGVudD0nd2lkdGg9ZGV2aWNlLXdpZHRoLGluaXRpYWwtc2NhbGU9MSc+IgogICAgICAgICAgICAgICAgIjx0aXRsZT5ob2IgY2FtIHRlc3Q8L3RpdGxlPjwvaGVhZD4iCiAgICAgICAgICAgICAgICAiPGJvZHkgc3R5bGU9J21hcmdpbjowO2JhY2tncm91bmQ6IzExMTtjb2xvcjojZWVlO2ZvbnQtZmFtaWx5OnNhbnMtc2VyaWYnPiIKICAgICAgICAgICAgICAgICI8ZGl2IHN0eWxlPSdwYWRkaW5nOjEwcHgnPlRFU1QgTU9ERSAmbWRhc2g7IGxpdmUgc3RpbGxzICh+MS9zKS4gIgogICAgICAgICAgICAgICAgIkFkanVzdCBmb2N1cy9wb3NpdGlvbiBhbmQgd2F0Y2ggaGVyZS48L2Rpdj4iCiAgICAgICAgICAgICAgICAiPGltZyBpZD0naW1nJyBzcmM9Jy9zbmFwc2hvdC5qcGcnICIKICAgICAgICAgICAgICAgICJzdHlsZT0nd2lkdGg6MTAwdnc7bWF4LWhlaWdodDo4OHZoO29iamVjdC1maXQ6Y29udGFpbjtiYWNrZ3JvdW5kOiMwMDAnPiIKICAgICAgICAgICAgICAgICI8c2NyaXB0PnNldEludGVydmFsKCgpPT57IgogICAgICAgICAgICAgICAgJ2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJpbWciKS5zcmM9JwogICAgICAgICAgICAgICAgIicvc25hcHNob3QuanBnP3Q9JytEYXRlLm5vdygpfSw0MDApIgogICAgICAgICAgICAgICAgIjwvc2NyaXB0PjwvYm9keT48L2h0bWw+IgogICAgICAgICAgICApLmVuY29kZSgpCiAgICAgICAgICAgIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApCiAgICAgICAgICAgIHNlbGYuc2VuZF9oZWFkZXIoIkNvbnRlbnQtVHlwZSIsICJ0ZXh0L2h0bWwiKQogICAgICAgICAgICBzZWxmLnNlbmRfaGVhZGVyKCJDb250ZW50LUxlbmd0aCIsIHN0cihsZW4oaHRtbCkpKQogICAgICAgICAgICBzZWxmLmVuZF9oZWFkZXJzKCkKICAgICAgICAgICAgc2VsZi53ZmlsZS53cml0ZShodG1sKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHNlbGYuc2VuZF9yZXNwb25zZSg0MDQpCiAgICAgICAgICAgIHNlbGYuZW5kX2hlYWRlcnMoKQoKICAgIGRlZiBkb19QT1NUKHNlbGYpOgogICAgICAgIGlmIHNlbGYucGF0aCA9PSAiL2R2ciI6CiAgICAgICAgICAgIGxlbmd0aCA9IGludChzZWxmLmhlYWRlcnMuZ2V0KCJDb250ZW50LUxlbmd0aCIsIDApKQogICAgICAgICAgICBpZiBsZW5ndGggPD0gMCBvciBsZW5ndGggPiA1ICogMTAyNCAqIDEwMjQ6CiAgICAgICAgICAgICAgICBzZWxmLnNlbmRfcmVzcG9uc2UoNDAwKQogICAgICAgICAgICAgICAgc2VsZi5lbmRfaGVhZGVycygpCiAgICAgICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgZGF0YSA9IHNlbGYucmZpbGUucmVhZChsZW5ndGgpCiAgICAgICAgICAgIGlmIG5vdCAoZGF0YVs6Ml0gPT0gYiJceGZmXHhkOCIpOgogICAgICAgICAgICAgICAgbG9nLndhcm5pbmcoInJlamVjdGVkIG5vbi1KUEVHIGR2ciBmcmFtZSAoJWQgYnl0ZXMpIiwgbGVuKGRhdGEpKQogICAgICAgICAgICAgICAgc2VsZi5zZW5kX3Jlc3BvbnNlKDQwMCkKICAgICAgICAgICAgICAgIHNlbGYuZW5kX2hlYWRlcnMoKQogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIChEVlJESVIgLyAoImR2cl8lZC5qcGciICUgaW50KHRpbWUudGltZSgpICogMTAwMCkpKS53cml0ZV9ieXRlcyhkYXRhKQogICAgICAgICAgICBTTkFQLndyaXRlX2J5dGVzKGRhdGEpCiAgICAgICAgICAgIHNlbGYuX2pzb24oMjAwLCB7Im9rIjogVHJ1ZX0pCiAgICAgICAgICAgIHRocmVhZGluZy5UaHJlYWQodGFyZ2V0PXByb2Nlc3NfZHZyX3J1biwgZGFlbW9uPVRydWUpLnN0YXJ0KCkKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgaWYgc2VsZi5wYXRoID09ICIvc25hcHNob3QiOgogICAgICAgICAgICBsZW5ndGggPSBpbnQoc2VsZi5oZWFkZXJzLmdldCgiQ29udGVudC1MZW5ndGgiLCAwKSkKICAgICAgICAgICAgaWYgbGVuZ3RoIDw9IDAgb3IgbGVuZ3RoID4gNSAqIDEwMjQgKiAxMDI0OgogICAgICAgICAgICAgICAgc2VsZi5zZW5kX3Jlc3BvbnNlKDQwMCkKICAgICAgICAgICAgICAgIHNlbGYuZW5kX2hlYWRlcnMoKQogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIGRhdGEgPSBzZWxmLnJmaWxlLnJlYWQobGVuZ3RoKQogICAgICAgICAgICBpZiBub3QgKGRhdGFbOjJdID09IGIiXHhmZlx4ZDgiKToKICAgICAgICAgICAgICAgIGxvZy53YXJuaW5nKCJyZWplY3RlZCBub24tSlBFRyBzbmFwc2hvdCAoJWQgYnl0ZXMpIiwgbGVuKGRhdGEpKQogICAgICAgICAgICAgICAgc2VsZi5zZW5kX3Jlc3BvbnNlKDQwMCkKICAgICAgICAgICAgICAgIHNlbGYuZW5kX2hlYWRlcnMoKQogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIFNOQVAud3JpdGVfYnl0ZXMoZGF0YSkKICAgICAgICAgICAgIyBhcmNoaXZlIGJ1cnN0IGZyYW1lcyAoa2VlcHMgbGFzdCBCVVJTVF9LRUVQLCAvdGVzdCBzdGlsbCBzaG93cyBsYXRlc3QpCiAgICAgICAgICAgIChCVVJTVFMgLyAoInNuYXBfJWQuanBnIiAlIGludCh0aW1lLnRpbWUoKSAqIDEwMDApKSkud3JpdGVfYnl0ZXMoZGF0YSkKICAgICAgICAgICAgZm9yIG9sZCBpbiBzb3J0ZWQoQlVSU1RTLmdsb2IoInNuYXBfKi5qcGciKSlbOi1CVVJTVF9LRUVQXToKICAgICAgICAgICAgICAgIG9sZC51bmxpbmsobWlzc2luZ19vaz1UcnVlKQogICAgICAgICAgICBzZWxmLl9qc29uKDIwMCwgeyJvayI6IFRydWV9KQogICAgICAgICAgICByZXR1cm4KICAgICAgICBpZiBzZWxmLnBhdGggIT0gIi91cGxvYWQiOgogICAgICAgICAgICBzZWxmLnNlbmRfcmVzcG9uc2UoNDA0KQogICAgICAgICAgICBzZWxmLmVuZF9oZWFkZXJzKCkKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgbGVuZ3RoID0gaW50KHNlbGYuaGVhZGVycy5nZXQoIkNvbnRlbnQtTGVuZ3RoIiwgMCkpCiAgICAgICAgaWYgbGVuZ3RoIDw9IDAgb3IgbGVuZ3RoID4gMTAwICogMTAyNCAqIDEwMjQ6CiAgICAgICAgICAgIHNlbGYuc2VuZF9yZXNwb25zZSg0MDApCiAgICAgICAgICAgIHNlbGYuZW5kX2hlYWRlcnMoKQogICAgICAgICAgICByZXR1cm4KICAgICAgICBkYXRhID0gc2VsZi5yZmlsZS5yZWFkKGxlbmd0aCkKICAgICAgICBpZiBub3QgKGRhdGFbOjRdID09IGIiUklGRiIgYW5kIGRhdGFbODoxMl0gPT0gYiJBVkkgIik6CiAgICAgICAgICAgIGxvZy53YXJuaW5nKCJyZWplY3RlZCBub24tQVZJIHVwbG9hZCAoJWQgYnl0ZXMpIiwgbGVuKGRhdGEpKQogICAgICAgICAgICBzZWxmLnNlbmRfcmVzcG9uc2UoNDAwKQogICAgICAgICAgICBzZWxmLmVuZF9oZWFkZXJzKCkKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgbmFtZSA9ICJob2JfJXMuYXZpIiAlIGRhdGV0aW1lLm5vdyh0aW1lem9uZS51dGMpLnN0cmZ0aW1lKCIlWSVtJWRUJUglTSVTIikKICAgICAgICAoSU5CT1ggLyBuYW1lKS53cml0ZV9ieXRlcyhkYXRhKQogICAgICAgIGxvZy5pbmZvKCJyZWNlaXZlZCAlcyAoJWQgYnl0ZXMpIiwgbmFtZSwgbGVuKGRhdGEpKQogICAgICAgIHdvcmsucHV0KElOQk9YIC8gbmFtZSkKICAgICAgICBzZWxmLl9qc29uKDIwMCwgeyJvayI6IFRydWV9KQoKCmRlZiBtYWluKCk6CiAgICBJTkJPWC5ta2RpcihwYXJlbnRzPVRydWUsIGV4aXN0X29rPVRydWUpCiAgICBET05FLm1rZGlyKHBhcmVudHM9VHJ1ZSwgZXhpc3Rfb2s9VHJ1ZSkKICAgIGZvciBfIGluIHJhbmdlKDIpOgogICAgICAgIHRocmVhZGluZy5UaHJlYWQodGFyZ2V0PXdvcmtlciwgZGFlbW9uPVRydWUpLnN0YXJ0KCkKICAgIHNydiA9IFRocmVhZGluZ0hUVFBTZXJ2ZXIoKCIwLjAuMC4wIiwgSFRUUF9QT1JUKSwgSGFuZGxlcikKICAgIGxvZy5pbmZvKCJsaXN0ZW5pbmcgb24gOiVkIGluYm94PSVzIGRyeV9ydW49JXMgZXZlcnlfbj0lZCIsCiAgICAgICAgICAgICBIVFRQX1BPUlQsIElOQk9YLCBEUllfUlVOLCBFVkVSWV9OKQogICAgc3J2LnNlcnZlX2ZvcmV2ZXIoKQoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBtYWluKCkK
+#!/usr/bin/env python3
+"""
+esp32-boiling-hub bridge: ESP32-S3 hob camera -> Gemini boiling verdict -> MQTT.
+
+Pipeline per clip:
+  1. S3 POSTs MJPEG AVI to http://ppl01:8099/upload
+  2. ffmpeg transcodes AVI -> H.264 MP4
+  3. MP4 sent to Gemini; prompt demands strict JSON {"boiling": bool}
+  4. Verdict published (retained) to MQTT topic hob/boiling for Home Assistant
+
+Config via environment or ~/hob-watch/config.env (KEY=VALUE lines):
+  GEMINI_API_KEY   (required for live mode; empty in dry-run)
+  GEMINI_MODEL     default: gemini-2.5-flash
+  HOB_HTTP_PORT    default: 8099
+  HOB_BRIDGE_HOST  default: 127.0.0.1 (public IP for clip_url in verdicts)
+  HOB_MQTT_HOST    default: 127.0.0.1
+  HOB_MQTT_PORT    default: 1883
+  HOB_TOPIC        default: hob/boiling
+  HOB_FFMPEG       default: /home/ppl/bin/ffmpeg
+  HOB_EVERY_N      default: 1 (send every Nth clip to Gemini)
+  HOB_DRY_RUN      default: 0 (1 = skip Gemini, publish dry-run verdict)
+  HOB_KEEP_DONE    default: 50 (trim processed clips beyond this many)
+"""
+
+import base64
+import json
+import logging
+import os
+import queue
+import re
+import shutil
+import subprocess
+import threading
+import time
+from datetime import datetime, timezone
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
+
+import paho.mqtt.client as mqtt
+
+HOME = Path.home()
+BASE = HOME / "hob-watch"
+INBOX = BASE / "inbox"
+DONE = BASE / "done"
+SNAP = BASE / "snapshot.jpg"
+BURSTS = BASE / "bursts"
+BURSTS.mkdir(exist_ok=True)
+BURST_KEEP = 40
+DVRDIR = BASE / "dvr"
+DVRDIR.mkdir(exist_ok=True)
+DVR_FRAMES = 10
+_dvr_lock = threading.Lock()
+
+_cfg = BASE / "config.env"
+if _cfg.exists():
+    for _line in _cfg.read_text().splitlines():
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _k, _v = _line.split("=", 1)
+            os.environ.setdefault(_k.strip(), _v.strip().strip('"').strip("'"))
+
+
+def env(name, default):
+    return os.environ.get(name, default)
+
+
+HTTP_PORT = int(env("HOB_HTTP_PORT", "8099"))
+BRIDGE_HOST = env("HOB_BRIDGE_HOST", "127.0.0.1")  # public IP/hostname for clip URLs
+MQTT_HOST = env("HOB_MQTT_HOST", "127.0.0.1")
+MQTT_PORT = int(env("HOB_MQTT_PORT", "1883"))
+MQTT_USER = env("HOB_MQTT_USER", "")
+MQTT_PASS = env("HOB_MQTT_PASS", "")
+TOPIC = env("HOB_TOPIC", "hob/boiling")
+FFMPEG = env("HOB_FFMPEG", str(HOME / "bin" / "ffmpeg"))
+GEMINI_KEY = env("GEMINI_API_KEY", "")
+GEMINI_MODEL = env("GEMINI_MODEL", "gemini-2.5-flash")
+EVERY_N = max(1, int(env("HOB_EVERY_N", "1")))
+DRY_RUN = env("HOB_DRY_RUN", "0") == "1"
+KEEP_DONE = int(env("HOB_KEEP_DONE", "50"))
+
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
+)
+log = logging.getLogger("hob-watch")
+
+work = queue.Queue()
+clip_counter = 0
+counter_lock = threading.Lock()
+
+PROMPT = (
+    "You are watching a pot on an induction hob. Look at the water surface. "
+    "Is the water at a rolling boil (vigorous bubbling across the surface)? "
+    'Reply with ONLY this JSON and nothing else: {"boiling": true} or {"boiling": false}'
+)
+
+
+def transcode(src: Path, dst: Path):
+    cmd = [
+        FFMPEG, "-y", "-v", "error", "-i", str(src),
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
+        "-pix_fmt", "yuv420p", "-an", str(dst),
+    ]
+    subprocess.run(cmd, check=True, timeout=120)
+
+
+def ask_gemini(mp4_path: Path) -> bool:
+    data = base64.b64encode(mp4_path.read_bytes()).decode()
+    body = {
+        "contents": [{"parts": [
+            {"text": PROMPT},
+            {"inline_data": {"mime_type": "video/mp4", "data": data}},
+        ]}],
+        "generationConfig": {
+            "temperature": 0,
+            "maxOutputTokens": 32,
+            "responseMimeType": "application/json",
+        },
+    }
+    req = Request(
+        f"https://generativelanguage.googleapis.com/v1beta/models/"
+        f"{GEMINI_MODEL}:generateContent",
+        data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json", "x-goog-api-key": GEMINI_KEY},
+    )
+    try:
+        with urlopen(req, timeout=120) as resp:
+            payload = json.loads(resp.read())
+    except HTTPError as e:
+        detail = e.read().decode()[:500]
+        raise RuntimeError(f"Gemini HTTP {e.code}: {detail}")
+    except URLError as e:
+        raise RuntimeError(f"Gemini network error: {e}")
+    try:
+        text = payload["candidates"][0]["content"]["parts"][0]["text"]
+    except (KeyError, IndexError):
+        raise RuntimeError(f"Unexpected Gemini response: {str(payload)[:300]}")
+    m = re.search(r"\{[^{}]*\}", text)
+    if not m:
+        raise RuntimeError(f"No JSON in Gemini reply: {text[:200]}")
+    val = json.loads(m.group(0)).get("boiling")
+    if not isinstance(val, bool):
+        raise RuntimeError(f"Bad verdict value: {text[:200]}")
+    return val
+
+
+_mqtt_client = None
+_mqtt_lock = threading.Lock()
+
+
+def get_mqtt():
+    global _mqtt_client
+    with _mqtt_lock:
+        if _mqtt_client is None:
+            c = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+            if MQTT_USER:
+                c.username_pw_set(MQTT_USER, MQTT_PASS)
+            c.connect(MQTT_HOST, MQTT_PORT, keepalive=30)
+            c.loop_start()
+            _mqtt_client = c
+        return _mqtt_client
+
+
+def publish_verdict(verdict: dict):
+    get_mqtt().publish(TOPIC, json.dumps(verdict), qos=1, retain=True)
+    log.info("published %s -> %s", TOPIC, verdict)
+
+
+
+def process_dvr_run():
+    """Stitch oldest DVR_FRAMES JPEGs to MP4, ask Gemini, publish verdict."""
+    global clip_counter
+    with _dvr_lock:
+        files = sorted(DVRDIR.glob("dvr_*.jpg"))
+        if len(files) < DVR_FRAMES:
+            return
+        batch = files[:DVR_FRAMES]
+    ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+    lst = BASE / ("dvr_%s.txt" % ts)
+    mp4 = BASE / ("dvr_%s.mp4" % ts)
+    try:
+        with open(lst, "w") as f:
+            for fp in batch:
+                f.write("file '%s'\n" % fp)
+        r = subprocess.run(
+            [FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
+             "-framerate", "2", "-c:v", "libx264", "-pix_fmt", "yuv420p",
+             str(mp4)],
+            capture_output=True, timeout=60)
+        if r.returncode != 0 or not mp4.exists():
+            log.error("dvr ffmpeg failed: %s", r.stderr.decode()[-300:])
+            return
+        log.info("dvr stitched %d frames -> %s (%d bytes)",
+                 len(batch), mp4.name, mp4.stat().st_size)
+        with counter_lock:
+            clip_counter += 1
+            n = clip_counter
+        if n % EVERY_N != 0:
+            log.info("dvr: skipped by HOB_EVERY_N=%d", EVERY_N)
+            verdict = None
+        elif DRY_RUN:
+            log.info("dvr: dry run, skipping Gemini")
+            verdict = {"boiling": False, "dry_run": True}
+        else:
+            if not GEMINI_KEY:
+                raise RuntimeError("GEMINI_API_KEY not set")
+            t0 = time.time()
+            boiling = ask_gemini(mp4)
+            log.info("dvr: gemini verdict=%s in %.1fs", boiling, time.time() - t0)
+            verdict = {"boiling": boiling}
+        if verdict is not None:
+            verdict.update({
+                "ts": datetime.now(timezone.utc).isoformat(),
+                "clip": mp4.name,
+                "clip_url": "http://%s:%d/clip/" % (BRIDGE_HOST, HTTP_PORT) + mp4.name,
+                "model": GEMINI_MODEL,
+                "source": "dvr",
+            })
+            publish_verdict(verdict)
+    except Exception as e:
+        log.error("dvr process failed: %s", e)
+    finally:
+        for fp in batch:
+            fp.unlink(missing_ok=True)
+        lst.unlink(missing_ok=True)
+        if mp4.exists():
+            (DONE / mp4.name).write_bytes(mp4.read_bytes())
+            mp4.unlink(missing_ok=True)
+
+def trim_done():
+    stems = sorted({p.stem for p in DONE.glob("hob_*")})
+    for stem in stems[: max(0, len(stems) - KEEP_DONE)]:
+        for p in DONE.glob(stem + ".*"):
+            p.unlink(missing_ok=True)
+
+
+def process_clip(path: Path):
+    global clip_counter
+    with counter_lock:
+        clip_counter += 1
+        n = clip_counter
+    stem = path.stem
+    mp4 = INBOX / (stem + ".mp4")
+    try:
+        if n % EVERY_N != 0:
+            log.info("%s: skipped by HOB_EVERY_N=%d", path.name, EVERY_N)
+            verdict = None
+        elif DRY_RUN:
+            log.info("%s: dry run, skipping Gemini", path.name)
+            verdict = {"boiling": False, "dry_run": True}
+        else:
+            if not GEMINI_KEY:
+                raise RuntimeError("GEMINI_API_KEY not set")
+            t0 = time.time()
+            transcode(path, mp4)
+            log.info("%s: transcoded in %.1fs", path.name, time.time() - t0)
+            t0 = time.time()
+            boiling = ask_gemini(mp4)
+            log.info("%s: gemini verdict=%s in %.1fs",
+                     path.name, boiling, time.time() - t0)
+            verdict = {"boiling": boiling}
+        if verdict is not None:
+            verdict.update({
+                "ts": datetime.now(timezone.utc).isoformat(),
+                "clip": path.name,
+                "clip_url": "http://%s:%d/clip/" % (BRIDGE_HOST, HTTP_PORT) + mp4.name,
+                "model": GEMINI_MODEL,
+            })
+            publish_verdict(verdict)
+    except Exception as e:
+        log.error("%s: FAILED: %s", path.name, e)
+    finally:
+        try:
+            shutil.move(str(path), DONE / path.name)
+            if mp4.exists():
+                shutil.move(str(mp4), DONE / mp4.name)
+        except Exception as e:
+            log.error("move to done failed: %s", e)
+        trim_done()
+
+
+def worker():
+    while True:
+        process_clip(work.get())
+
+
+class Handler(BaseHTTPRequestHandler):
+    def log_message(self, *a):
+        pass
+
+    def _json(self, code, obj):
+        body = json.dumps(obj).encode()
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_GET(self):
+        path = self.path.split("?", 1)[0]  # ignore query strings (e.g. cache-busters)
+        if path == "/health":
+            self._json(200, {"ok": True})
+        elif path == "/latest":
+            mp4s = sorted(DONE.glob("hob_*.mp4"))
+            if not mp4s:
+                self.send_response(404)
+                self.end_headers()
+                return
+            data = mp4s[-1].read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "video/mp4")
+            self.send_header("Content-Length", str(len(data)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(data)
+        elif path == "/view":
+            html = ("<html><head><meta charset='utf-8'><title>hob cam</title></head><body style='margin:0;background:#111'>"
+                    "<video src='/latest' style='width:100vw;height:100vh;object-fit:contain' autoplay muted loop controls></video>"
+                    "<script>setTimeout(()=>location.reload(),35000)</script>"
+                    "</body></html>").encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html")
+            self.send_header("Content-Length", str(len(html)))
+            self.end_headers()
+            self.wfile.write(html)
+        elif path.startswith("/clip/"):
+            name = path[len("/clip/"):]
+            if not name or "/" in name or ".." in name or not name.endswith(".mp4"):
+                self.send_response(400); self.end_headers(); return
+            fp = DONE / name
+            if not fp.exists():
+                self.send_response(404); self.end_headers(); return
+            data = fp.read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "video/mp4")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return
+        elif path == "/snapshot.jpg":
+            if not SNAP.exists():
+                self.send_response(404)
+                self.end_headers()
+                return
+            data = SNAP.read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "image/jpeg")
+            self.send_header("Content-Length", str(len(data)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(data)
+        elif path == "/test":
+            html = (
+                "<html><head><meta charset='utf-8'>"
+                "<meta name='viewport' content='width=device-width,initial-scale=1'>"
+                "<title>hob cam test</title></head>"
+                "<body style='margin:0;background:#111;color:#eee;font-family:sans-serif'>"
+                "<div style='padding:10px'>TEST MODE &mdash; live stills (~1/s). "
+                "Adjust focus/position and watch here.</div>"
+                "<img id='img' src='/snapshot.jpg' "
+                "style='width:100vw;max-height:88vh;object-fit:contain;background:#000'>"
+                "<script>setInterval(()=>{"
+                'document.getElementById("img").src='
+                "'/snapshot.jpg?t='+Date.now()},400)"
+                "</script></body></html>"
+            ).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html")
+            self.send_header("Content-Length", str(len(html)))
+            self.end_headers()
+            self.wfile.write(html)
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def do_POST(self):
+        if self.path == "/dvr":
+            length = int(self.headers.get("Content-Length", 0))
+            if length <= 0 or length > 5 * 1024 * 1024:
+                self.send_response(400)
+                self.end_headers()
+                return
+            data = self.rfile.read(length)
+            if not (data[:2] == b"\xff\xd8"):
+                log.warning("rejected non-JPEG dvr frame (%d bytes)", len(data))
+                self.send_response(400)
+                self.end_headers()
+                return
+            (DVRDIR / ("dvr_%d.jpg" % int(time.time() * 1000))).write_bytes(data)
+            SNAP.write_bytes(data)
+            self._json(200, {"ok": True})
+            threading.Thread(target=process_dvr_run, daemon=True).start()
+            return
+        if self.path == "/snapshot":
+            length = int(self.headers.get("Content-Length", 0))
+            if length <= 0 or length > 5 * 1024 * 1024:
+                self.send_response(400)
+                self.end_headers()
+                return
+            data = self.rfile.read(length)
+            if not (data[:2] == b"\xff\xd8"):
+                log.warning("rejected non-JPEG snapshot (%d bytes)", len(data))
+                self.send_response(400)
+                self.end_headers()
+                return
+            SNAP.write_bytes(data)
+            # archive burst frames (keeps last BURST_KEEP, /test still shows latest)
+            (BURSTS / ("snap_%d.jpg" % int(time.time() * 1000))).write_bytes(data)
+            for old in sorted(BURSTS.glob("snap_*.jpg"))[:-BURST_KEEP]:
+                old.unlink(missing_ok=True)
+            self._json(200, {"ok": True})
+            return
+        if self.path != "/upload":
+            self.send_response(404)
+            self.end_headers()
+            return
+        length = int(self.headers.get("Content-Length", 0))
+        if length <= 0 or length > 100 * 1024 * 1024:
+            self.send_response(400)
+            self.end_headers()
+            return
+        data = self.rfile.read(length)
+        if not (data[:4] == b"RIFF" and data[8:12] == b"AVI "):
+            log.warning("rejected non-AVI upload (%d bytes)", len(data))
+            self.send_response(400)
+            self.end_headers()
+            return
+        name = "hob_%s.avi" % datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+        (INBOX / name).write_bytes(data)
+        log.info("received %s (%d bytes)", name, len(data))
+        work.put(INBOX / name)
+        self._json(200, {"ok": True})
+
+
+def main():
+    INBOX.mkdir(parents=True, exist_ok=True)
+    DONE.mkdir(parents=True, exist_ok=True)
+    for _ in range(2):
+        threading.Thread(target=worker, daemon=True).start()
+    srv = ThreadingHTTPServer(("0.0.0.0", HTTP_PORT), Handler)
+    log.info("listening on :%d inbox=%s dry_run=%s every_n=%d",
+             HTTP_PORT, INBOX, DRY_RUN, EVERY_N)
+    srv.serve_forever()
+
+
+if __name__ == "__main__":
+    main()
