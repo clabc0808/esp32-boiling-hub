@@ -1,1 +1,179 @@
-IyBFU1AzMiBCb2lsaW5nIEh1YgoKV2F0Y2ggeW91ciBob2Igd2l0aCBhbiBFU1AzMi1TMyBjYW1lcmEuIEdldCBhIHBob25lIG5vdGlmaWNhdGlvbiB3aGVuIHdhdGVyIGJvaWxzLCB3aXRoIGEgdGFwLXRvLXZpZXcgbGluayB0byB0aGUgZXhhY3QgdmlkZW8gY2xpcCB0aGUgQUkgYW5hbHl6ZWQuCgojIyBIb3cgaXQgd29ya3MKCmBgYApFU1AzMi1TMyBDYW1lcmEg4oaSIEJyaWRnZSAoUHl0aG9uKSDihpIgR2VtaW5pIFZpc2lvbiDihpIgTVFUVCDihpIgSG9tZSBBc3Npc3RhbnQg4oaSIFlvdXIgcGhvbmUKYGBgCgoxLiAqKkVTUDMyLVMzKiogd2F0Y2hlcyB0aGUgaG9iLiBUd28gbW9kZXM6CiAgIC0gKipQcm9kdWN0aW9uKio6IFdoZW4gSG9tZSBBc3Npc3RhbnQgc2F5cyB0aGUgaG9iIGlzIG9uIChNUVRUIGBraXRjaGVuL2hvYmApLCByZWNvcmRzIDEwcyBNSlBFRyB2aWRlbyBldmVyeSAzMHMsIFBPU1RzIHRvIHRoZSBicmlkZ2UgYXQgYC91cGxvYWRgLgogICAtICoqRFZSIEJ1cnN0Kio6IFB1Ymxpc2ggYE9OYCB0byBNUVRUIGBob2IvY2FtX3Rlc3RgIGZvciBhIG9uZS1zaG90IDEwLWZyYW1lIHN0aWxsIGJ1cnN0IOKGkiBicmlkZ2UgYXV0by1zdGl0Y2hlcyB0byBNUDQg4oaSIEdlbWluaS4gVXNlZnVsIGZvciB0ZXN0aW5nIHdpdGhvdXQgaGVhdGluZyB0aGUgaG9iLgoyLiAqKkJyaWRnZSoqIChQeXRob24sIHJ1bnMgb24gYSBsb2NhbCBzZXJ2ZXIgbGlrZSBhIFJhc3BiZXJyeSBQaSBvciBtaW5pIFBDKToKICAgLSBSZWNlaXZlcyB2aWRlbyBjbGlwcyAoYC91cGxvYWRgKSBvciBEVlIgYnVyc3RzIChgL2R2cmApCiAgIC0gVHJhbnNjb2Rlcy9zdGl0Y2hlcyB0byBILjI2NCBNUDQgdmlhIGZmbXBlZwogICAtIFNlbmRzIHRvIEdlbWluaSBWaXNpb24gQVBJIGZvciBib2lsaW5nIGRldGVjdGlvbgogICAtIFB1Ymxpc2hlcyB2ZXJkaWN0IGB7ImJvaWxpbmciOiBib29sLCAiY2xpcF91cmwiOiAiLi4uIiwgLi4ufWAgdG8gTVFUVCBgaG9iL2JvaWxpbmdgCjMuICoqSG9tZSBBc3Npc3RhbnQqKiBhdXRvbWF0aW9uIG5vdGlmaWVzIHlvdXIgcGhvbmUgb24gZXZlcnkgdmVyZGljdC4gVGFwcGluZyB0aGUgbm90aWZpY2F0aW9uIG9wZW5zIHRoZSBleGFjdCBNUDQgY2xpcCBHZW1pbmkgYW5hbHl6ZWQgKHNlcnZlZCBieSB0aGUgYnJpZGdlIGF0IGAvY2xpcC88bmFtZT4ubXA0YCkuCgojIyBIYXJkd2FyZQoKIyMjIEVTUDMyLVMzIENhbWVyYSBCb2FyZAotIEVTUDMyLVMzIHdpdGggKio4TUIgUFNSQU0qKiAoZS5nLiwgRVNQMzItUzMtQ0FNLUJvYXJkLU4xNlI4IOKAlCAxNk1CIGZsYXNoIC8gOE1CIG9jdGFsIFBTUkFNKQotIE9WNTY0MCBjYW1lcmEgbW9kdWxlICg1TVApCi0gbWljcm9TRCBjYXJkIChmb3IgdmlkZW8vYnVyc3QgYnVmZmVyaW5nKQoKKipBcmR1aW5vIElERSBzZXR0aW5nczoqKgotIEJvYXJkOiAiRVNQMzJTMyBEZXYgTW9kdWxlIgotIFVTQiBDREMgT24gQm9vdDogRW5hYmxlZAotIEZsYXNoIFNpemU6IDE2TUIKLSBQYXJ0aXRpb24gU2NoZW1lOiAiMTZNIEZsYXNoICgzTUIgQVBQLzkuOU1CIEZBVEZTKSIKLSBQU1JBTTogIk9QSSBQU1JBTSIgKG1hbmRhdG9yeSBmb3Igb2N0YWwgUFNSQU0pCi0gVXBsb2FkIFNwZWVkOiA5MjE2MDAKLSBMaWJyYXJpZXM6IFB1YlN1YkNsaWVudCAoZXNwX2NhbWVyYSwgU0RfTU1DLCBXaUZpLCBIVFRQQ2xpZW50IHNoaXAgd2l0aCB0aGUgRVNQMzIgQXJkdWlubyBjb3JlKQoKIyMjIEJyaWRnZSBTZXJ2ZXIKLSBBbnkgTGludXggbWFjaGluZSBvbiB5b3VyIExBTiAoUmFzcGJlcnJ5IFBpLCBtaW5pIFBDLCBOQVMsIGV0Yy4pCi0gUHl0aG9uIDMuOCssIGZmbXBlZywgYWNjZXNzIHRvIGFuIE1RVFQgYnJva2VyCi0gVGVzdGVkIG9uIFVidW50dSAyNC4wNC8yNi4wNAoKIyMgU2V0dXAKCiMjIyAxLiBCcmlkZ2Ugc2VydmVyCgpgYGBiYXNoCiMgSW5zdGFsbCBkZXBlbmRlbmNpZXMKcGlwIGluc3RhbGwgcGFoby1tcXR0CiMgZmZtcGVnOiBhcHQgaW5zdGFsbCBmZm1wZWcgIChvciB1c2UgeW91ciBkaXN0cm8ncyBwYWNrYWdlKQoKIyBDb25maWd1cmUKbWtkaXIgLXAgfi9ob2Itd2F0Y2gKY3AgYnJpZGdlL2NvbmZpZy5lbnYuZXhhbXBsZSB+L2hvYi13YXRjaC9jb25maWcuZW52CiMgRWRpdCB+L2hvYi13YXRjaC9jb25maWcuZW52IOKAlCBhdCBtaW5pbXVtIHNldCBHRU1JTklfQVBJX0tFWSBhbmQgSE9CX0JSSURHRV9IT1NUCgojIFJ1bgpweXRob24zIGJyaWRnZS9icmlkZ2UucHkKYGBgCgpGb3IgcHJvZHVjdGlvbiwgcnVuIGFzIGEgc3lzdGVtZCB1c2VyIHNlcnZpY2U6CmBgYGJhc2gKIyBTZWUgYnJpZGdlL2JyaWRnZS5zZXJ2aWNlLmV4YW1wbGUgKGFkYXB0IHBhdGhzLCB0aGVuKToKc3lzdGVtY3RsIC0tdXNlciBlbmFibGUgLS1ub3cgaG9iLWJyaWRnZQpgYGAKCioqQnJpZGdlIGVuZHBvaW50czoqKgoKfCBFbmRwb2ludCB8IE1ldGhvZCB8IFB1cnBvc2UgfAp8LS0tfC0tLXwtLS18CnwgYC91cGxvYWRgIHwgUE9TVCB8IEVTUDMyIHBvc3RzIE1KUEVHIEFWSSBjbGlwcyAocHJvZHVjdGlvbiB2aWRlbykgfAp8IGAvZHZyYCB8IFBPU1QgfCBFU1AzMiBwb3N0cyBEVlIgYnVyc3QgSlBFR3MgKDEwIGZyYW1lcyDihpIgYXV0by1zdGl0Y2gg4oaSIEdlbWluaSkgfAp8IGAvc25hcHNob3RgIHwgUE9TVCB8IFNpbmdsZSBKUEVHIHN0aWxsICh0ZXN0aW5nIC8gZm9jdXMgdHVuaW5nKSB8CnwgYC9jbGlwLzxuYW1lPi5tcDRgIHwgR0VUIHwgU2VydmUgYSBwcm9jZXNzZWQgY2xpcCAobm90aWZpY2F0aW9uIHRhcC10by12aWV3IGxpbmtzKSB8CnwgYC90ZXN0YCB8IEdFVCB8IExpdmUtdXBkYXRpbmcgcGFnZSBzaG93aW5nIHRoZSBsYXRlc3Qgc25hcHNob3QgfAp8IGAvdmlld2AgfCBHRVQgfCBQbGF5IHRoZSBsYXRlc3QgcHJvY2Vzc2VkIGNsaXAgaW4gYSBicm93c2VyIHwKfCBgL3NuYXBzaG90LmpwZ2AgfCBHRVQgfCBMYXRlc3Qgc3RpbGwgaW1hZ2UgfAoKIyMjIDIuIEVTUDMyIGZpcm13YXJlCgoxLiBPcGVuIGBlc3AzMi9lc3AzMi1ib2lsaW5nLWh1Yi5pbm9gIGluIEFyZHVpbm8gSURFLgoyLiBGaWxsIGluIHlvdXIgY3JlZGVudGlhbHMgYXQgdGhlIHRvcCBvZiB0aGUgZmlsZToKICAgYGBgY3BwCiAgIGNvbnN0IGNoYXIqIFdJRklfU1NJRCAgICAgPSAiWU9VUl9XSUZJX1NTSUQiOwogICBjb25zdCBjaGFyKiBXSUZJX1BBU1NXT1JEID0gIllPVVJfV0lGSV9QQVNTV09SRCI7CiAgIGNvbnN0IGNoYXIqIE1RVFRfSE9TVCAgICAgPSAiWU9VUl9NUVRUX0JST0tFUl9JUCI7ICAvLyBlLmcuIEhvbWUgQXNzaXN0YW50IE1vc3F1aXR0bwogICBjb25zdCBjaGFyKiBNUVRUX1VTRVIgICAgID0gIllPVVJfTVFUVF9VU0VSIjsKICAgY29uc3QgY2hhciogTVFUVF9QQVNTICAgICA9ICJZT1VSX01RVFRfUEFTU1dPUkQiOwogICBjb25zdCBjaGFyKiBVUExPQURfVVJMICAgID0gImh0dHA6Ly9ZT1VSX0JSSURHRV9IT1NUX0lQOjgwOTkvdXBsb2FkIjsKICAgY29uc3QgY2hhciogRFZSX1VSTCAgICAgICA9ICJodHRwOi8vWU9VUl9CUklER0VfSE9TVF9JUDo4MDk5L2R2ciI7CiAgIGBgYAozLiBGbGFzaCB0byB5b3VyIEVTUDMyLVMzIHdpdGggdGhlIGJvYXJkIHNldHRpbmdzIGFib3ZlLgoKIyMjIDMuIEhvbWUgQXNzaXN0YW50CgoqKlB1Ymxpc2ggaG9iIHN0YXRlIHRvIE1RVFQqKiAoc28gdGhlIEVTUDMyIGtub3dzIHdoZW4gdG8gcmVjb3JkKToKCmBgYHlhbWwKYXV0b21hdGlvbjoKICAtIGFsaWFzOiAiSG9iIHdhdGNoIC0gcHVibGlzaCBjb29raW5nIHN0YXRlIHRvIE1RVFQiCiAgICB0cmlnZ2VyOgogICAgICAtIHBsYXRmb3JtOiBzdGF0ZQogICAgICAgIGVudGl0eV9pZDogc2Vuc29yLmhvYl9vcGVyYXRpb25fc3RhdGUKICAgICAgICB0bzogInJ1biIKICAgICAgLSBwbGF0Zm9ybTogc3RhdGUKICAgICAgICBlbnRpdHlfaWQ6IHNlbnNvci5ob2Jfb3BlcmF0aW9uX3N0YXRlCiAgICAgICAgbm90X3RvOiAicnVuIgogICAgYWN0aW9uOgogICAgICAtIHNlcnZpY2U6IG1xdHQucHVibGlzaAogICAgICAgIGRhdGE6CiAgICAgICAgICB0b3BpYzoga2l0Y2hlbi9ob2IKICAgICAgICAgIHBheWxvYWQ6ICJ7eyAnb24nIGlmIHRyaWdnZXIudG9fc3RhdGUuc3RhdGUgPT0gJ3J1bicgZWxzZSAnb2ZmJyB9fSIKICAgICAgICAgIHJldGFpbjogdHJ1ZQpgYGAKCj4gQWRqdXN0IGBzZW5zb3IuaG9iX29wZXJhdGlvbl9zdGF0ZWAgdG8geW91ciBob2IncyBlbnRpdHkuIEFueSBzZW5zb3Igd29ya3Mg4oCUIHRoZSBFU1AzMiBqdXN0IG5lZWRzIGBvbmAvYG9mZmAgb24gYGtpdGNoZW4vaG9iYC4KCioqVmVyZGljdCDihpIgcGhvbmUgbm90aWZpY2F0aW9uKiogKHdpdGggdGFwLXRvLXZpZXcgdGhlIGFuYWx5emVkIGNsaXApOgoKYGBgeWFtbAphdXRvbWF0aW9uOgogIC0gYWxpYXM6ICJIb2Igd2F0Y2ggLSBub3RpZnkgYm9pbGluZyB2ZXJkaWN0IgogICAgdHJpZ2dlcjoKICAgICAgLSBwbGF0Zm9ybTogbXF0dAogICAgICAgIHRvcGljOiBob2IvYm9pbGluZwogICAgYWN0aW9uOgogICAgICAtIHNlcnZpY2U6IG5vdGlmeS5ub3RpZnkKICAgICAgICBkYXRhOgogICAgICAgICAgdGl0bGU6ICJIb2IgV2F0Y2giCiAgICAgICAgICBtZXNzYWdlOiAiQm9pbGluZzoge3sgdHJpZ2dlci5wYXlsb2FkX2pzb24uYm9pbGluZyB9fS4gVGFwIHRvIHZpZXcuIgogICAgICAgICAgZGF0YToKICAgICAgICAgICAgY2xpY2tBY3Rpb246ICJ7eyB0cmlnZ2VyLnBheWxvYWRfanNvbi5jbGlwX3VybCB9fSIKYGBgCgo+IGBub3RpZnkubm90aWZ5YCB0YXJnZXRzIGFsbCByZWdpc3RlcmVkIG1vYmlsZS1hcHAgZGV2aWNlcy4gUmVwbGFjZSB3aXRoIGBub3RpZnkubW9iaWxlX2FwcF88eW91cl9waG9uZT5gIHRvIHRhcmdldCBzcGVjaWZpYyBkZXZpY2VzLgoKIyMgUHJvamVjdCBzdHJ1Y3R1cmUKCmBgYAplc3AzMi1ib2lsaW5nLWh1Yi8K4pSc4pSA4pSAIGVzcDMyLwrilIIgICDilJTilIDilIAgZXNwMzItYm9pbGluZy1odWIuaW5vICAgIyBFU1AzMi1TMyBmaXJtd2FyZSAocHJvZHVjdGlvbiB2aWRlbyArIERWUiBidXJzdCkK4pSc4pSA4pSAIGJyaWRnZS8K4pSCICAg4pSc4pSA4pSAIGJyaWRnZS5weSAgICAgICAgICAgICAgICMgUHl0aG9uIGJyaWRnZTogSFRUUCDihpIgZmZtcGVnIOKGkiBHZW1pbmkg4oaSIE1RVFQK4pSCICAg4pSU4pSA4pSAIGNvbmZpZy5lbnYuZXhhbXBsZSAgICAgICMgQ29uZmlndXJhdGlvbiB0ZW1wbGF0ZQrilJTilIDilIAgUkVBRE1FLm1kCmBgYAoKIyMgS2V5IGRlc2lnbiBkZWNpc2lvbnMKCiMjIyBXaHkgdGhlIE9WNTY0MCB1c2VzIHNvZnR3YXJlIEpQRUcKVGhlIE9WNTY0MCdzIGhhcmR3YXJlIEpQRUcgcGF0aCBpcyBkZWFkIG9uIHRoZXNlIEVTUDMyLVMzIGJvYXJkcyAodGhlIHNlbnNvciBuZXZlciBlbWl0cyBKUEVHIGRhdGEpLiBUaGUgZmlybXdhcmUgY2FwdHVyZXMgKipSR0I1NjUqKiBhbmQgc29mdHdhcmUtZW5jb2RlcyBlYWNoIGZyYW1lIHZpYSBgZm10MmpwZygpYC4gQXQgWEdBIHRoaXMgdGFrZXMgfjY3MG1zL2ZyYW1lIOKAlCBmaW5lIGZvciAxMHMgY2xpcHMgYW5kIGJ1cnN0cywgYnV0IG5vdCBmb3IgaGlnaC1mcmFtZXJhdGUgdmlkZW8uCgojIyMgV2h5IFhHQSAoMTAyNMOXNzY4KSwgbm90IGhpZ2hlcgotIFhHQSBSR0I1NjUgPSAxLjVNQi9mcmFtZS4gVHdvIGZyYW1lYnVmZmVycyA9IDNNQiwgbGVhdmluZyB+NU1CIG9mIHRoZSA4TUIgUFNSQU0gZm9yIHRoZSBzeXN0ZW0sIE1RVFQsIEhUVFAsIGFuZCBlbmNvZGUgc2NyYXRjaC4KLSBTWEdBICgxMjgww5cxMDI0KSBuZWVkcyAyLjZNQi9mcmFtZSDDlyAzIGJ1ZmZlcnMgPSA3LjhNQiDigJQgaXQgd29ya3MgZm9yIGJ1cnN0cyBidXQgbGVhdmVzIGFsbW9zdCBub3RoaW5nIGZvciBhbnl0aGluZyBlbHNlLCBhbmQgc29mdHdhcmUgZW5jb2RlIGp1bXBzIHRvIH4xLjFzL2ZyYW1lLgotIFVYR0EgKDE2MDDDlzEyMDApIGRvZXNuJ3QgZml0IGF0IGFsbDogNCBidWZmZXJzIGV4Y2VlZCA4TUIsIGFuZCAyIGJ1ZmZlcnMgc3RhcnZlIHRoZSBETUEuCgojIyMgV2h5IHRoZSBjYW1lcmEgaXMgbmV2ZXIgZGVpbml0aWFsaXplZApgZXNwX2NhbWVyYV9kZWluaXQoKWAgZm9sbG93ZWQgYnkgYGVzcF9jYW1lcmFfaW5pdCgpYCBmYWlscyBvbiB0aGUgc2Vjb25kIHJ1bjogdGhlIGhlYXAgZnJhZ21lbnRzIChtYW55IHNtYWxsIGFsbG9jYXRpb25zIGZyb20gV2lGaS9NUVRUL0hUVFAgbGFuZCBiZXR3ZWVuIHRoZSBmcmVlZCBmcmFtZWJ1ZmZlciBibG9ja3MpIGFuZCB0aGUgZHJpdmVyIGNhbid0IGZpbmQgY29udGlndW91cyAxLjVNQiBibG9ja3MsIGV2ZW4gdGhvdWdoIHRvdGFsIGZyZWUgUFNSQU0gbG9va3MgaGVhbHRoeS4gVGhlIGZpeDogKiphbGxvY2F0ZSB0aGUgZnJhbWVidWZmZXJzIG9uY2UgYXQgYm9vdCBhbmQgbmV2ZXIgZnJlZSB0aGVtKiouIFRoZSBEVlIgImJvcnJvd3MiIGEgY2hlY2tlZC1vdXQgZnJhbWVidWZmZXIgYXMgaXRzIGVuY29kZSBzY3JhdGNoIGJ1ZmZlciBpbnN0ZWFkIG9mIGRvaW5nIGEgc2VwYXJhdGUgMS41TUIgYHBzX21hbGxvY2AuIFplcm9pbmcgUkFNIGRvZXNuJ3QgaGVscCDigJQgaXQncyBhbGxvY2F0b3IgbGF5b3V0LCBub3Qgc3RhbGUgZGF0YS4KCiMjIyBEVlIgYnVyc3QgYXJjaGl0ZWN0dXJlIChwcm9kdWNlci1jb25zdW1lcikKUGhhc2UgMSAoY2FwdHVyZSkgcnVucyBhIEZyZWVSVE9TIHByb2R1Y2VyLWNvbnN1bWVyOiB0aGUgY2FtZXJhIGZpbGxzIGZyYW1lYnVmZmVycyB3aGlsZSBhIHdyaXRlciB0YXNrIG9uIENvcmUgMCBkcmFpbnMgdGhlbSB0byBTRC4gV2l0aCAyIGJ1ZmZlcnMsIHRoZSBmaXJzdCAyIGZyYW1lcyBjYXB0dXJlIGJhY2stdG8tYmFjayAofjE5MG1zKSwgdGhlbiBjYXB0dXJlIHRocm90dGxlcyB0byBTRCB3cml0ZSBzcGVlZCAofjU4MG1zL2ZyYW1lIGF0IFhHQSkuIFRvdGFsOiAxMCBmcmFtZXMgaW4gfjZzLgoKUGhhc2UgMiByZWFkcyBlYWNoIHJhdyBmcmFtZSBiYWNrIGZyb20gU0QgaW50byBhIGJvcnJvd2VkIGNhbWVyYSBidWZmZXIgYW5kIHNvZnR3YXJlLWVuY29kZXMgdG8gSlBFRy4gUGhhc2UgMyBQT1NUcyB0aGUgSlBFR3MgdG8gdGhlIGJyaWRnZS4KCiMjIyBTRCBjYXJkIGlzIHRoZSBib3R0bGVuZWNrCk1lYXN1cmVkIH4yLjPigJMyLjcgTUIvcyBvbiAxLWJpdCBTRE1NQy4gQSAxLjVNQiBYR0EgcmF3IGZyYW1lIHRha2VzIH41ODBtcyB0byB3cml0ZS4gVGhpcyBpcyB3aGF0IGxpbWl0cyBidXJzdCByYXRlLCBub3QgdGhlIHNlbnNvci4KCiMjIFRyb3VibGVzaG9vdGluZwoKLSAqKkNhbWVyYSBpbml0IGZhaWxzKio6IGNoZWNrIHRoZSBwaW4gZGVmaW5pdGlvbnMgYXQgdGhlIHRvcCBvZiB0aGUgYC5pbm9gIG1hdGNoIHlvdXIgYm9hcmQuIFRoZSBkZWZhdWx0cyBzdWl0IGNvbW1vbiBFU1AzMi1TMy1OMTZSOCA0MC1waW4gY2FtZXJhIGJvYXJkcyAoR09PVVVVL0ZyZWVub3ZlIHN0eWxlKS4KLSAqKmBmYl9nZXQoKWAgdGltZW91dHMqKjogeW91IGRvbid0IGhhdmUgZW5vdWdoIGZyZWUgUFNSQU0gZm9yIHRoZSBjb25maWd1cmVkIGBmYl9jb3VudGAg4oCUIHJlZHVjZSByZXNvbHV0aW9uIG9yIGBmYl9jb3VudGAuCi0gKipCcmlkZ2UgNDAwIG9uIGAvdXBsb2FkYCoqOiBpdCBvbmx5IGFjY2VwdHMgTUpQRUcgQVZJIChgUklGRi4uLi5BVkkgYCBtYWdpYykuIGAvZHZyYCBhbmQgYC9zbmFwc2hvdGAgb25seSBhY2NlcHQgSlBFRyAoYEZGIEQ4YCBtYWdpYykuCi0gKipObyB2ZXJkaWN0Kio6IGNoZWNrIGBHRU1JTklfQVBJX0tFWWAgaW4gYGNvbmZpZy5lbnZgLCBhbmQgdGhhdCBgSE9CX0RSWV9SVU5gIGlzIGAwYC4gV2F0Y2ggYnJpZGdlIGxvZ3Mgd2l0aCBgam91cm5hbGN0bCAtLXVzZXIgLXUgaG9iLWJyaWRnZSAtZmAuCi0gKipOb3RpZmljYXRpb24gdGFwIGRvZXMgbm90aGluZyoqOiBgSE9CX0JSSURHRV9IT1NUYCBtdXN0IGJlIGFuIElQL2hvc3RuYW1lIHlvdXIgcGhvbmUgY2FuIHJlYWNoIG9uIHlvdXIgTEFOLiBgMTI3LjAuMC4xYCB3b24ndCB3b3JrIGZyb20gdGhlIHBob25lLgoKIyMgTGljZW5zZQoKTUlUIOKAlCBkbyB3aGF0IHlvdSB3YW50LCBubyB3YXJyYW50eS4K
+# ESP32 Boiling Hub
+
+Watch your hob with an ESP32-S3 camera. Get a phone notification when water boils, with a tap-to-view link to the exact video clip the AI analyzed.
+
+## How it works
+
+```
+ESP32-S3 Camera → Bridge (Python) → Gemini Vision → MQTT → Home Assistant → Your phone
+```
+
+1. **ESP32-S3** watches the hob. Two modes:
+   - **Production**: When Home Assistant says the hob is on (MQTT `kitchen/hob`), records 10s MJPEG video every 30s, POSTs to the bridge at `/upload`.
+   - **DVR Burst**: Publish `ON` to MQTT `hob/cam_test` for a one-shot 10-frame still burst → bridge auto-stitches to MP4 → Gemini. Useful for testing without heating the hob.
+2. **Bridge** (Python, runs on a local server like a Raspberry Pi or mini PC):
+   - Receives video clips (`/upload`) or DVR bursts (`/dvr`)
+   - Transcodes/stitches to H.264 MP4 via ffmpeg
+   - Sends to Gemini Vision API for boiling detection
+   - Publishes verdict `{"boiling": bool, "clip_url": "...", ...}` to MQTT `hob/boiling`
+3. **Home Assistant** automation notifies your phone on every verdict. Tapping the notification opens the exact MP4 clip Gemini analyzed (served by the bridge at `/clip/<name>.mp4`).
+
+## Hardware
+
+### ESP32-S3 Camera Board
+- ESP32-S3 with **8MB PSRAM** (e.g., ESP32-S3-CAM-Board-N16R8 — 16MB flash / 8MB octal PSRAM)
+- OV5640 camera module (5MP)
+- microSD card (for video/burst buffering)
+
+**Arduino IDE settings:**
+- Board: "ESP32S3 Dev Module"
+- USB CDC On Boot: Enabled
+- Flash Size: 16MB
+- Partition Scheme: "16M Flash (3MB APP/9.9MB FATFS)"
+- PSRAM: "OPI PSRAM" (mandatory for octal PSRAM)
+- Upload Speed: 921600
+- Libraries: PubSubClient (esp_camera, SD_MMC, WiFi, HTTPClient ship with the ESP32 Arduino core)
+
+### Bridge Server
+- Any Linux machine on your LAN (Raspberry Pi, mini PC, NAS, etc.)
+- Python 3.8+, ffmpeg, access to an MQTT broker
+- Tested on Ubuntu 24.04/26.04
+
+## Setup
+
+### 1. Bridge server
+
+```bash
+# Install dependencies
+pip install paho-mqtt
+# ffmpeg: apt install ffmpeg  (or use your distro's package)
+
+# Configure
+mkdir -p ~/hob-watch
+cp bridge/config.env.example ~/hob-watch/config.env
+# Edit ~/hob-watch/config.env — at minimum set GEMINI_API_KEY and HOB_BRIDGE_HOST
+
+# Run
+python3 bridge/bridge.py
+```
+
+For production, run as a systemd user service:
+```bash
+# See bridge/bridge.service.example (adapt paths, then):
+systemctl --user enable --now hob-bridge
+```
+
+**Bridge endpoints:**
+
+| Endpoint | Method | Purpose |
+|---|---|---|
+| `/upload` | POST | ESP32 posts MJPEG AVI clips (production video) |
+| `/dvr` | POST | ESP32 posts DVR burst JPEGs (10 frames → auto-stitch → Gemini) |
+| `/snapshot` | POST | Single JPEG still (testing / focus tuning) |
+| `/clip/<name>.mp4` | GET | Serve a processed clip (notification tap-to-view links) |
+| `/test` | GET | Live-updating page showing the latest snapshot |
+| `/view` | GET | Play the latest processed clip in a browser |
+| `/snapshot.jpg` | GET | Latest still image |
+
+### 2. ESP32 firmware
+
+1. Open `esp32/esp32-boiling-hub.ino` in Arduino IDE.
+2. Fill in your credentials at the top of the file:
+   ```cpp
+   const char* WIFI_SSID     = "YOUR_WIFI_SSID";
+   const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
+   const char* MQTT_HOST     = "YOUR_MQTT_BROKER_IP";  // e.g. Home Assistant Mosquitto
+   const char* MQTT_USER     = "YOUR_MQTT_USER";
+   const char* MQTT_PASS     = "YOUR_MQTT_PASSWORD";
+   const char* UPLOAD_URL    = "http://YOUR_BRIDGE_HOST_IP:8099/upload";
+   const char* DVR_URL       = "http://YOUR_BRIDGE_HOST_IP:8099/dvr";
+   ```
+3. Flash to your ESP32-S3 with the board settings above.
+
+### 3. Home Assistant
+
+**Publish hob state to MQTT** (so the ESP32 knows when to record):
+
+```yaml
+automation:
+  - alias: "Hob watch - publish cooking state to MQTT"
+    trigger:
+      - platform: state
+        entity_id: sensor.hob_operation_state
+        to: "run"
+      - platform: state
+        entity_id: sensor.hob_operation_state
+        not_to: "run"
+    action:
+      - service: mqtt.publish
+        data:
+          topic: kitchen/hob
+          payload: "{{ 'on' if trigger.to_state.state == 'run' else 'off' }}"
+          retain: true
+```
+
+> Adjust `sensor.hob_operation_state` to your hob's entity. Any sensor works — the ESP32 just needs `on`/`off` on `kitchen/hob`.
+
+**Verdict → phone notification** (with tap-to-view the analyzed clip):
+
+```yaml
+automation:
+  - alias: "Hob watch - notify boiling verdict"
+    trigger:
+      - platform: mqtt
+        topic: hob/boiling
+    action:
+      - service: notify.notify
+        data:
+          title: "Hob Watch"
+          message: "Boiling: {{ trigger.payload_json.boiling }}. Tap to view."
+          data:
+            clickAction: "{{ trigger.payload_json.clip_url }}"
+```
+
+> `notify.notify` targets all registered mobile-app devices. Replace with `notify.mobile_app_<your_phone>` to target specific devices.
+
+## Project structure
+
+```
+esp32-boiling-hub/
+├── esp32/
+│   └── esp32-boiling-hub.ino   # ESP32-S3 firmware (production video + DVR burst)
+├── bridge/
+│   ├── bridge.py               # Python bridge: HTTP → ffmpeg → Gemini → MQTT
+│   └── config.env.example      # Configuration template
+└── README.md
+```
+
+## Key design decisions
+
+### Why the OV5640 uses software JPEG
+The OV5640's hardware JPEG path is dead on these ESP32-S3 boards (the sensor never emits JPEG data). The firmware captures **RGB565** and software-encodes each frame via `fmt2jpg()`. At XGA this takes ~670ms/frame — fine for 10s clips and bursts, but not for high-framerate video.
+
+### Why XGA (1024×768), not higher
+- XGA RGB565 = 1.5MB/frame. Two framebuffers = 3MB, leaving ~5MB of the 8MB PSRAM for the system, MQTT, HTTP, and encode scratch.
+- SXGA (1280×1024) needs 2.6MB/frame × 3 buffers = 7.8MB — it works for bursts but leaves almost nothing for anything else, and software encode jumps to ~1.1s/frame.
+- UXGA (1600×1200) doesn't fit at all: 4 buffers exceed 8MB, and 2 buffers starve the DMA.
+
+### Why the camera is never deinitialized
+`esp_camera_deinit()` followed by `esp_camera_init()` fails on the second run: the heap fragments (many small allocations from WiFi/MQTT/HTTP land between the freed framebuffer blocks) and the driver can't find contiguous 1.5MB blocks, even though total free PSRAM looks healthy. The fix: **allocate the framebuffers once at boot and never free them**. The DVR "borrows" a checked-out framebuffer as its encode scratch buffer instead of doing a separate 1.5MB `ps_malloc`. Zeroing RAM doesn't help — it's allocator layout, not stale data.
+
+### DVR burst architecture (producer-consumer)
+Phase 1 (capture) runs a FreeRTOS producer-consumer: the camera fills framebuffers while a writer task on Core 0 drains them to SD. With 2 buffers, the first 2 frames capture back-to-back (~190ms), then capture throttles to SD write speed (~580ms/frame at XGA). Total: 10 frames in ~6s.
+
+Phase 2 reads each raw frame back from SD into a borrowed camera buffer and software-encodes to JPEG. Phase 3 POSTs the JPEGs to the bridge.
+
+### SD card is the bottleneck
+Measured ~2.3–2.7 MB/s on 1-bit SDMMC. A 1.5MB XGA raw frame takes ~580ms to write. This is what limits burst rate, not the sensor.
+
+## Troubleshooting
+
+- **Camera init fails**: check the pin definitions at the top of the `.ino` match your board. The defaults suit common ESP32-S3-N16R8 40-pin camera boards (GOOUUU/Freenove style).
+- **`fb_get()` timeouts**: you don't have enough free PSRAM for the configured `fb_count` — reduce resolution or `fb_count`.
+- **Bridge 400 on `/upload`**: it only accepts MJPEG AVI (`RIFF....AVI ` magic). `/dvr` and `/snapshot` only accept JPEG (`FF D8` magic).
+- **No verdict**: check `GEMINI_API_KEY` in `config.env`, and that `HOB_DRY_RUN` is `0`. Watch bridge logs with `journalctl --user -u hob-bridge -f`.
+- **Notification tap does nothing**: `HOB_BRIDGE_HOST` must be an IP/hostname your phone can reach on your LAN. `127.0.0.1` won't work from the phone.
+
+## License
+
+MIT — do what you want, no warranty.
