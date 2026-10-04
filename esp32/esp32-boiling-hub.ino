@@ -1,1 +1,550 @@
-LyoKICogZXNwMzItYm9pbGluZy1odWIuaW5vIOKAlCBFU1AzMi1TMyBob2IgYm9pbGluZy13YXRlciB3YXRjaGVyCiAqCiAqIFBST0RVQ1RJT04gKGtpdGNoZW4vaG9iKToKICogICAtICJvbiIgIC0+IGV2ZXJ5IDMwcywgcmVjb3JkIDEwcyBNSlBFRyBBVkkgdG8gU0QsIFBPU1QgdG8gL3VwbG9hZAogKiAgIC0gIm9mZiIgLT4gaWRsZQogKiAgIEJyaWRnZSB0cmFuc2NvZGVzLCBhc2tzIEdlbWluaSwgcHVibGlzaGVzIHZlcmRpY3QgdG8gaG9iL2JvaWxpbmcuCiAqCiAqIERWUiBCVVJTVCAoaG9iL2NhbV90ZXN0KToKICogICAtICJPTiIgLT4gb25lLXNob3Q6IDEwIFhHQSBmcmFtZXMgLT4gU0QgLT4gZW5jb2RlIC0+IFBPU1QgdG8gL2R2cgogKiAgIC0gQnJpZGdlIHN0aXRjaGVzIHRvIE1QNCwgYXNrcyBHZW1pbmksIHB1Ymxpc2hlcyB2ZXJkaWN0LgogKgogKiBDYW1lcmE6IFhHQSAxMDI0eDc2OCBSR0I1NjUsIGZiX2NvdW50PTIgKHVuaWZpZWQsIG5vIHJlaW5pdCBiZXR3ZWVuIG1vZGVzKS4KICogICAyIHggMS41TUIgPSAzTUIuIFBoYXNlIDIgYm9ycm93cyBhIGNhbWVyYSBidWZmZXIgYXMgZW5jb2RlIHNjcmF0Y2guCiAqICAgQ2FtZXJhIHN0YXlzIGluaXRpYWxpemVkIHBlcm1hbmVudGx5IChhdm9pZHMgZGVpbml0L3JlaW5pdCBmcmFnbWVudGF0aW9uKS4KICoKICogQk9BUkQ6IEVTUDMyUzMgRGV2IE1vZHVsZSwgVVNCIENEQyBPbiBCb290IEVuYWJsZWQsIDE2TUIgRmxhc2gsCiAqICAgMTZNICgzTUIgQVBQLzkuOU1CIEZBVEZTKSwgT1BJIFBTUkFNLCA5MjE2MDAgdXBsb2FkLgogKi8KCiNpbmNsdWRlIDxBcmR1aW5vLmg+CiNpbmNsdWRlIDxXaUZpLmg+CiNpbmNsdWRlIDxQdWJTdWJDbGllbnQuaD4KI2luY2x1ZGUgPEhUVFBDbGllbnQuaD4KI2luY2x1ZGUgImVzcF9jYW1lcmEuaCIKI2luY2x1ZGUgImltZ19jb252ZXJ0ZXJzLmgiCiNpbmNsdWRlICJTRF9NTUMuaCIKI2luY2x1ZGUgImZyZWVydG9zL0ZyZWVSVE9TLmgiCiNpbmNsdWRlICJmcmVlcnRvcy9xdWV1ZS5oIgojaW5jbHVkZSAiZnJlZXJ0b3Mvc2VtcGhyLmgiCgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBDT05GSUdVUkFUSU9OIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCmNvbnN0IGNoYXIqIFdJRklfU1NJRCAgICAgPSAiWU9VUl9XSUZJX1NTSUQiOwpjb25zdCBjaGFyKiBXSUZJX1BBU1NXT1JEID0gIllPVVJfV0lGSV9QQVNTV09SRCI7Cgpjb25zdCBjaGFyKiBNUVRUX0hPU1QgID0gIllPVVJfTVFUVF9CUk9LRVJfSVAiOwpjb25zdCBpbnQgICBNUVRUX1BPUlQgID0gMTg4MzsKY29uc3QgY2hhciogTVFUVF9UT1BJQyA9ICJraXRjaGVuL2hvYiI7ICAgICAgIC8vICJvbiIvIm9mZiIgZnJvbSBIQQpjb25zdCBjaGFyKiBNUVRUX1RFU1RfVE9QSUMgPSAiaG9iL2NhbV90ZXN0IjsgLy8gIk9OIiA9IERWUiBidXJzdCAob25lLXNob3QpCmNvbnN0IGNoYXIqIE1RVFRfVVNFUiAgPSAiWU9VUl9NUVRUX1VTRVIiOwpjb25zdCBjaGFyKiBNUVRUX1BBU1MgID0gIllPVVJfTVFUVF9QQVNTV09SRCI7Cgpjb25zdCBjaGFyKiBVUExPQURfVVJMID0gImh0dHA6Ly9ZT1VSX0JSSURHRV9IT1NUX0lQOjgwOTkvdXBsb2FkIjsKY29uc3QgY2hhciogRFZSX1VSTCAgICA9ICJodHRwOi8vWU9VUl9CUklER0VfSE9TVF9JUDo4MDk5L2R2ciI7Cgpjb25zdCB1bnNpZ25lZCBsb25nIENMSVBfTVMgICA9IDEwMDAwOyAgLy8gcmVjb3JkIDEwcyAuLi4KY29uc3QgdW5zaWduZWQgbG9uZyBQRVJJT0RfTVMgPSAzMDAwMDsgIC8vIC4uLiBldmVyeSAzMHMgd2hpbGUgaG9iIGlzIG9uCgovLyBEVlIgY29uZmlnCiNkZWZpbmUgRFZSX1cgMTAyNAojZGVmaW5lIERWUl9IIDc2OAojZGVmaW5lIERWUl9GUkFNRV9CWVRFUyAoRFZSX1cgKiBEVlJfSCAqIDIpICAvLyAxLDU3Miw4NjQKI2RlZmluZSBEVlJfTl9TSE9UUyAxMAojZGVmaW5lIERWUl9KUEVHX1FVQUxJVFkgMzAKI2RlZmluZSBEVlJfRkJfREVQVEggMgoKLy8gUGlucwojZGVmaW5lIFBXRE5fR1BJT19OVU0gIC0xCiNkZWZpbmUgUkVTRVRfR1BJT19OVU0gLTEKI2RlZmluZSBYQ0xLX0dQSU9fTlVNICAxNQojZGVmaW5lIFNJT0RfR1BJT19OVU0gIDQKI2RlZmluZSBTSU9DX0dQSU9fTlVNICA1CiNkZWZpbmUgWTlfR1BJT19OVU0gICAgMTYKI2RlZmluZSBZOF9HUElPX05VTSAgICAxNwojZGVmaW5lIFk3X0dQSU9fTlVNICAgIDE4CiNkZWZpbmUgWTZfR1BJT19OVU0gICAgMTIKI2RlZmluZSBZNV9HUElPX05VTSAgICAxMAojZGVmaW5lIFk0X0dQSU9fTlVNICAgIDgKI2RlZmluZSBZM19HUElPX05VTSAgICA5CiNkZWZpbmUgWTJfR1BJT19OVU0gICAgMTEKI2RlZmluZSBWU1lOQ19HUElPX05VTSA2CiNkZWZpbmUgSFJFRl9HUElPX05VTSAgNwojZGVmaW5lIFBDTEtfR1BJT19OVU0gIDEzCiNkZWZpbmUgU0RfQ0xLIDM5CiNkZWZpbmUgU0RfQ01EIDM4CiNkZWZpbmUgU0RfRDAgIDQwCiNkZWZpbmUgTEVEX0dQSU8gMgoKI2RlZmluZSBDQU1fVyAxMDI0CiNkZWZpbmUgQ0FNX0ggNzY4CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gU1RBVEUgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCldpRmlDbGllbnQgd2lmaUNsaWVudDsKUHViU3ViQ2xpZW50IG1xdHQod2lmaUNsaWVudCk7CnZvbGF0aWxlIGJvb2wgaG9iQWN0aXZlID0gZmFsc2U7CnZvbGF0aWxlIGJvb2wgZHZyUmVxdWVzdGVkID0gZmFsc2U7CnZvbGF0aWxlIGJvb2wgZHZyUnVubmluZyA9IGZhbHNlOwoKLy8gRFZSIEZyZWVSVE9TCnN0YXRpYyBRdWV1ZUhhbmRsZV90IGR2clF1ZXVlID0gTlVMTDsKc3RhdGljIFNlbWFwaG9yZUhhbmRsZV90IGR2ckRvbmVTZW0gPSBOVUxMOwpzdGF0aWMgdm9sYXRpbGUgaW50IGR2ckZpbGVzV3JpdHRlbiA9IDA7CnN0YXRpYyB2b2xhdGlsZSBib29sIGR2ckFib3J0ID0gZmFsc2U7CnN0YXRpYyBzaXplX3QgZHZyRnJhbWVCeXRlcyA9IDA7CgpzdGF0aWMgdW5zaWduZWQgbG9uZyBsYXN0V2lmaUF0dGVtcHQgPSAwOwoKdm9pZCBsZWQoYm9vbCBvbikgewogIGlmIChMRURfR1BJTyA+PSAwKSBkaWdpdGFsV3JpdGUoTEVEX0dQSU8sIG9uID8gSElHSCA6IExPVyk7Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBXaUZpIC8gTVFUVCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8Kdm9pZCB3aWZpRW5zdXJlKCkgewogIGlmIChXaUZpLnN0YXR1cygpID09IFdMX0NPTk5FQ1RFRCkgcmV0dXJuOwogIHVuc2lnbmVkIGxvbmcgbm93ID0gbWlsbGlzKCk7CiAgaWYgKG5vdyAtIGxhc3RXaWZpQXR0ZW1wdCA8IDMwMDAwKSByZXR1cm47CiAgbGFzdFdpZmlBdHRlbXB0ID0gbm93OwogIFNlcmlhbC5wcmludGYoIlt3aWZpXSByZWNvbm5lY3RpbmcgdG8gJXMuLi4iLCBXSUZJX1NTSUQpOwogIFdpRmkuZGlzY29ubmVjdCh0cnVlKTsKICBXaUZpLm1vZGUoV0lGSV9PRkYpOwogIGRlbGF5KDUwMCk7CiAgV2lGaS5tb2RlKFdJRklfU1RBKTsKICBXaUZpLmJlZ2luKFdJRklfU1NJRCwgV0lGSV9QQVNTV09SRCk7CiAgaW50IHRyaWVzID0gMDsKICB3aGlsZSAoV2lGaS5zdGF0dXMoKSAhPSBXTF9DT05ORUNURUQgJiYgdHJpZXMgPCA0MCkgewogICAgZGVsYXkoNTAwKTsgU2VyaWFsLnByaW50KCIuIik7IHRyaWVzKys7CiAgICBpZiAoV2lGaS5zdGF0dXMoKSA9PSBXTF9DT05ORUNUX0ZBSUxFRCkgYnJlYWs7CiAgfQogIFNlcmlhbC5wcmludGxuKFdpRmkuc3RhdHVzKCkgPT0gV0xfQ09OTkVDVEVEID8gIiBvayIgOiAiIEZBSUxFRCIpOwp9Cgp2b2lkIG1xdHRDYWxsYmFjayhjaGFyKiB0b3BpYywgYnl0ZSogcGF5bG9hZCwgdW5zaWduZWQgaW50IGxlbikgewogIFN0cmluZyB0KHRvcGljKSwgcDsKICBmb3IgKHVuc2lnbmVkIGludCBpID0gMDsgaSA8IGxlbjsgaSsrKSBwICs9IChjaGFyKXBheWxvYWRbaV07CiAgcC50cmltKCk7CiAgU2VyaWFsLnByaW50ZigiW21xdHRdICVzID0gJXNcbiIsIHQuY19zdHIoKSwgcC5jX3N0cigpKTsKICBpZiAodCA9PSBNUVRUX1RPUElDKSB7CiAgICBob2JBY3RpdmUgPSAocCA9PSAib24iKTsKICAgIFNlcmlhbC5wcmludGYoIltob2JdIGFjdGl2ZT0lZFxuIiwgaG9iQWN0aXZlKTsKICB9IGVsc2UgaWYgKHQgPT0gTVFUVF9URVNUX1RPUElDICYmIHAgPT0gIk9OIiAmJiAhZHZyUnVubmluZyAmJiAhZHZyUmVxdWVzdGVkKSB7CiAgICBTZXJpYWwucHJpbnRsbigiW2R2cl0gdHJpZ2dlciByZWNlaXZlZCIpOwogICAgZHZyUmVxdWVzdGVkID0gdHJ1ZTsKICB9Cn0KCnZvaWQgbXF0dEVuc3VyZSgpIHsKICBpZiAoV2lGaS5zdGF0dXMoKSAhPSBXTF9DT05ORUNURUQpIHJldHVybjsKICBpZiAobXF0dC5jb25uZWN0ZWQoKSkgcmV0dXJuOwogIFNlcmlhbC5wcmludCgiW21xdHRdIGNvbm5lY3RpbmcuLi4gIik7CiAgU3RyaW5nIGNpZCA9ICJob2ItbWVyZ2VkLSIgKyBTdHJpbmcoKHVpbnQzMl90KUVTUC5nZXRFZnVzZU1hYygpLCBIRVgpOwogIGJvb2wgb2sgPSBtcXR0LmNvbm5lY3QoY2lkLmNfc3RyKCksIE1RVFRfVVNFUiwgTVFUVF9QQVNTKTsKICBTZXJpYWwucHJpbnRsbihvayA/ICJvayIgOiAiRkFJTEVEIik7CiAgaWYgKG9rKSB7CiAgICBtcXR0LnN1YnNjcmliZShNUVRUX1RPUElDKTsKICAgIG1xdHQuc3Vic2NyaWJlKE1RVFRfVEVTVF9UT1BJQyk7CiAgfQp9CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBDYW1lcmEgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCmJvb2wgaW5pdENhbWVyYSgpIHsKICBjYW1lcmFfY29uZmlnX3QgYzsKICBjLmxlZGNfY2hhbm5lbCA9IExFRENfQ0hBTk5FTF8wOwogIGMubGVkY190aW1lciA9IExFRENfVElNRVJfMDsKICBjLnBpbl9kMCA9IFkyX0dQSU9fTlVNOyAgYy5waW5fZDEgPSBZM19HUElPX05VTTsKICBjLnBpbl9kMiA9IFk0X0dQSU9fTlVNOyAgYy5waW5fZDMgPSBZNV9HUElPX05VTTsKICBjLnBpbl9kNCA9IFk2X0dQSU9fTlVNOyAgYy5waW5fZDUgPSBZN19HUElPX05VTTsKICBjLnBpbl9kNiA9IFk4X0dQSU9fTlVNOyAgYy5waW5fZDcgPSBZOV9HUElPX05VTTsKICBjLnBpbl94Y2xrID0gWENMS19HUElPX05VTTsKICBjLnBpbl9wY2xrID0gUENMS19HUElPX05VTTsKICBjLnBpbl92c3luYyA9IFZTWU5DX0dQSU9fTlVNOwogIGMucGluX2hyZWYgPSBIUkVGX0dQSU9fTlVNOwogIGMucGluX3NjY2Jfc2RhID0gU0lPRF9HUElPX05VTTsKICBjLnBpbl9zY2NiX3NjbCA9IFNJT0NfR1BJT19OVU07CiAgYy5waW5fcHdkbiA9IFBXRE5fR1BJT19OVU07CiAgYy5waW5fcmVzZXQgPSBSRVNFVF9HUElPX05VTTsKICBjLnhjbGtfZnJlcV9oeiA9IDIwMDAwMDAwOwogIGMucGl4ZWxfZm9ybWF0ID0gUElYRk9STUFUX1JHQjU2NTsKICBjLmZyYW1lX3NpemUgPSBGUkFNRVNJWkVfWEdBOwogIGMuanBlZ19xdWFsaXR5ID0gMTI7CiAgYy5mYl9jb3VudCA9IERWUl9GQl9ERVBUSDsgIC8vIDIgeCAxLjVNQgogIGMuZmJfbG9jYXRpb24gPSBDQU1FUkFfRkJfSU5fUFNSQU07CiAgYy5ncmFiX21vZGUgPSBDQU1FUkFfR1JBQl9MQVRFU1Q7CiAgZXNwX2Vycl90IGVyciA9IGVzcF9jYW1lcmFfaW5pdCgmYyk7CiAgaWYgKGVyciAhPSBFU1BfT0spIHsKICAgIFNlcmlhbC5wcmludGYoIltjYW1dIGluaXQgRkFJTEVEIDB4JXhcbiIsIGVycik7CiAgICByZXR1cm4gZmFsc2U7CiAgfQogIFNlcmlhbC5wcmludGxuKCJbY2FtXSBpbml0IG9rLCBYR0EsIGZiX2NvdW50PTIiKTsKICByZXR1cm4gdHJ1ZTsKfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIE1JTklNQUwgQVZJIFdSSVRFUiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwovLyBXcml0ZXMgYSBwbGF5YWJsZSBNSlBFRyBBVkkuIEFsbCBpbnRlZ2VycyBsaXR0bGUtZW5kaWFuIChuYXRpdmUgb24gRVNQMzIpLgoKc3RhdGljIHZvaWQgdzMyKEZpbGUgJmYsIHVpbnQzMl90IHYpIHsgZi53cml0ZSgodWludDhfdCopJnYsIDQpOyB9CgpzdHJ1Y3QgQXZpV3JpdGVyIHsKICBGaWxlIGY7CiAgdWludDMyX3QgcmlmZlNpemVQb3MsIGhkcmxMZW5Qb3MsIG1vdmlMZW5Qb3M7CiAgdWludDMyX3QgYXZpaEZyYW1lc1Bvcywgc3RyaFJhdGVQb3MsIHN0cmhMZW5Qb3MsIHN0cmxMZW5Qb3M7CiAgdWludDMyX3QgbW92aURhdGFTdGFydDsKICB1aW50MzJfdCBmcmFtZUNvdW50ID0gMDsKICAvLyBpbmRleCBlbnRyaWVzIGtlcHQgc21hbGw6IDEwIHMgQCB+MjAgZnBzIHdvcnN0IGNhc2UgPSAyMDAgZW50cmllcwogIHN0cnVjdCBJZHggeyB1aW50MzJfdCBvZmZzZXQsIHNpemU7IH07CiAgSWR4IGlkeFs0MDBdOwogIHVpbnQxNl90IGlkeENvdW50ID0gMDsKCiAgYm9vbCBvcGVuKGNvbnN0IGNoYXIqIHBhdGgsIHVpbnQxNl90IHcsIHVpbnQxNl90IGgpIHsKICAgIGYgPSBTRF9NTUMub3BlbihwYXRoLCBGSUxFX1dSSVRFKTsKICAgIGlmICghZikgcmV0dXJuIGZhbHNlOwoKICAgIGYud3JpdGUoKHVpbnQ4X3QqKSJSSUZGIiwgNCk7CiAgICByaWZmU2l6ZVBvcyA9IGYucG9zaXRpb24oKTsgdzMyKGYsIDApOwogICAgZi53cml0ZSgodWludDhfdCopIkFWSSAiLCA0KTsKCiAgICBmLndyaXRlKCh1aW50OF90KikiTElTVCIsIDQpOwogICAgaGRybExlblBvcyA9IGYucG9zaXRpb24oKTsgdzMyKGYsIDApOwogICAgZi53cml0ZSgodWludDhfdCopImhkcmwiLCA0KTsKCiAgICAvLyBhdmloCiAgICBmLndyaXRlKCh1aW50OF90KikiYXZpaCIsIDQpOyB3MzIoZiwgNTYpOwogICAgdzMyKGYsIDY2NjY3KTsgICAgICAgICAgICAvLyBkd01pY3JvU2VjUGVyRnJhbWUgKDE1IGZwcyBub21pbmFsLCBmaXhlZCB1cCBsYXRlcikKICAgIHczMihmLCAwKTsgICAgICAgICAgICAgICAgLy8gZHdNYXhCeXRlc1BlclNlYwogICAgdzMyKGYsIDApOyAgICAgICAgICAgICAgICAvLyBkd1BhZGRpbmdHcmFudWxhcml0eQogICAgdzMyKGYsIDB4MTApOyAgICAgICAgICAgICAvLyBkd0ZsYWdzID0gQVZJRl9IQVNJTkRFWAogICAgYXZpaEZyYW1lc1BvcyA9IGYucG9zaXRpb24oKTsgdzMyKGYsIDApOyAgLy8gZHdUb3RhbEZyYW1lcyAoZml4dXApCiAgICB3MzIoZiwgMCk7ICAgICAgICAgICAgICAgIC8vIGR3SW5pdGlhbEZyYW1lcwogICAgdzMyKGYsIDEpOyAgICAgICAgICAgICAgICAvLyBkd1N0cmVhbXMKICAgIHczMihmLCAwKTsgICAgICAgICAgICAgICAgLy8gZHdTdWdnZXN0ZWRCdWZmZXJTaXplCiAgICB3MzIoZiwgdyk7IHczMihmLCBoKTsKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgNDsgaSsrKSB3MzIoZiwgMCk7ICAgIC8vIGR3UmVzZXJ2ZWRbNF0KCiAgICAvLyBzdHJsCiAgICBmLndyaXRlKCh1aW50OF90KikiTElTVCIsIDQpOwogICAgc3RybExlblBvcyA9IGYucG9zaXRpb24oKTsgdzMyKGYsIDApOwogICAgZi53cml0ZSgodWludDhfdCopInN0cmwiLCA0KTsKCiAgICAvLyBzdHJoIChBVklTVFJFQU1IRUFERVIgPSA2NCBieXRlcykKICAgIGYud3JpdGUoKHVpbnQ4X3QqKSJzdHJoIiwgNCk7IHczMihmLCA2NCk7CiAgICBmLndyaXRlKCh1aW50OF90KikidmlkcyIsIDQpOyAgICAgICAgICAgICAvLyBmY2NUeXBlCiAgICBmLndyaXRlKCh1aW50OF90KikiTUpQRyIsIDQpOyAgICAgICAgICAgICAvLyBmY2NIYW5kbGVyCiAgICB3MzIoZiwgMCk7IHczMihmLCAwKTsgICAgICAgICAgICAgICAgICAgICAvLyBkd0ZsYWdzOyB3UHJpb3JpdHkrd0xhbmd1YWdlCiAgICB3MzIoZiwgMCk7ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvLyBkd0luaXRpYWxGcmFtZXMKICAgIHczMihmLCAxKTsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIGR3U2NhbGUKICAgIHN0cmhSYXRlUG9zID0gZi5wb3NpdGlvbigpOyB3MzIoZiwgMTUpOyAgIC8vIGR3UmF0ZSAoZml4dXApCiAgICB3MzIoZiwgMCk7ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvLyBkd1N0YXJ0CiAgICBzdHJoTGVuUG9zID0gZi5wb3NpdGlvbigpOyB3MzIoZiwgMCk7ICAgICAvLyBkd0xlbmd0aCAoZml4dXApCiAgICB3MzIoZiwgMCk7ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvLyBkd1N1Z2dlc3RlZEJ1ZmZlclNpemUKICAgIHczMihmLCAweEZGRkZGRkZGKTsgICAgICAgICAgICAgICAgICAgICAgIC8vIGR3UXVhbGl0eQogICAgdzMyKGYsIDApOyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLy8gZHdTYW1wbGVTaXplCiAgICB3MzIoZiwgMCk7IHczMihmLCAwKTsgdzMyKGYsIHcpOyB3MzIoZiwgaCk7IC8vIHJjRnJhbWUKCiAgICAvLyBzdHJmIChCSVRNQVBJTkZPSEVBREVSKQogICAgZi53cml0ZSgodWludDhfdCopInN0cmYiLCA0KTsgdzMyKGYsIDQwKTsKICAgIHczMihmLCA0MCk7IHczMihmLCB3KTsgdzMyKGYsIGgpOwogICAgZi53cml0ZSgodWludDhfdCopIlx4MDFceDAwXHgxOFx4MDAiLCA0KTsgLy8gcGxhbmVzPTEsIGJpdGNvdW50PTI0CiAgICBmLndyaXRlKCh1aW50OF90KikiTUpQRyIsIDQpOyAgICAgICAgICAgICAvLyBiaUNvbXByZXNzaW9uCiAgICB3MzIoZiwgKHVpbnQzMl90KXcgKiBoICogMyk7ICAgICAgICAgICAgICAvLyBiaVNpemVJbWFnZSAoZXN0aW1hdGUpCiAgICB3MzIoZiwgMCk7IHczMihmLCAwKTsgdzMyKGYsIDApOyB3MzIoZiwgMCk7CgogICAgdWludDMyX3Qgc3RybEVuZCA9IGYucG9zaXRpb24oKTsKICAgIGYuc2VlayhzdHJsTGVuUG9zKTsgdzMyKGYsIHN0cmxFbmQgLSBzdHJsTGVuUG9zIC0gNCk7IGYuc2VlayhzdHJsRW5kKTsKCiAgICAvLyBtb3ZpCiAgICBmLndyaXRlKCh1aW50OF90KikiTElTVCIsIDQpOwogICAgbW92aUxlblBvcyA9IGYucG9zaXRpb24oKTsgdzMyKGYsIDApOwogICAgZi53cml0ZSgodWludDhfdCopIm1vdmkiLCA0KTsKICAgIG1vdmlEYXRhU3RhcnQgPSBmLnBvc2l0aW9uKCk7CiAgICByZXR1cm4gdHJ1ZTsKICB9CgogIHZvaWQgYWRkRnJhbWUoY29uc3QgdWludDhfdCogZGF0YSwgdWludDMyX3QgbGVuKSB7CiAgICBpZiAoaWR4Q291bnQgPj0gNDAwKSByZXR1cm47CiAgICBmLndyaXRlKCh1aW50OF90KikiMDBkYyIsIDQpOwogICAgdzMyKGYsIGxlbik7CiAgICB1aW50MzJfdCBkYXRhUG9zID0gZi5wb3NpdGlvbigpOwogICAgZi53cml0ZShkYXRhLCBsZW4pOwogICAgaWYgKGxlbiAmIDEpIGYud3JpdGUoKHVpbnQ4X3QpMCk7ICAvLyBwYWQgdG8gZXZlbgogICAgaWR4W2lkeENvdW50XS5vZmZzZXQgPSBkYXRhUG9zIC0gbW92aURhdGFTdGFydDsKICAgIGlkeFtpZHhDb3VudF0uc2l6ZSA9IGxlbjsKICAgIGlkeENvdW50Kys7CiAgICBmcmFtZUNvdW50Kys7CiAgfQoKICAvLyBmcHNfeDEwMCA9IGZyYW1lcyBwZXIgc2Vjb25kICogMTAwLCBmb3IgZXhhY3QgYmFjay1wYXRjaAogIHZvaWQgY2xvc2UodWludDMyX3QgZnBzX3gxMDAsIHVpbnQxNl90IHcsIHVpbnQxNl90IGgpIHsKICAgIHVpbnQzMl90IG1vdmlFbmQgPSBmLnBvc2l0aW9uKCk7CiAgICBmLnNlZWsobW92aUxlblBvcyk7IHczMihmLCBtb3ZpRW5kIC0gbW92aUxlblBvcyAtIDQpOyBmLnNlZWsobW92aUVuZCk7CgogICAgZi53cml0ZSgodWludDhfdCopImlkeDEiLCA0KTsKICAgIHczMihmLCBpZHhDb3VudCAqIDE2KTsKICAgIGZvciAodWludDE2X3QgaSA9IDA7IGkgPCBpZHhDb3VudDsgaSsrKSB7CiAgICAgIGYud3JpdGUoKHVpbnQ4X3QqKSIwMGRjIiwgNCk7CiAgICAgIHczMihmLCAweDEwKTsKICAgICAgdzMyKGYsIGlkeFtpXS5vZmZzZXQpOwogICAgICB3MzIoZiwgaWR4W2ldLnNpemUpOwogICAgfQoKICAgIHVpbnQzMl90IGVuZCA9IGYucG9zaXRpb24oKTsKICAgIGYuc2VlayhyaWZmU2l6ZVBvcyk7IHczMihmLCBlbmQgLSA4KTsKICAgIGYuc2VlayhoZHJsTGVuUG9zKTsgIHczMihmLCBtb3ZpTGVuUG9zIC0gaGRybExlblBvcyAtIDQpOwogICAgZi5zZWVrKGF2aWhGcmFtZXNQb3MpOyB3MzIoZiwgZnJhbWVDb3VudCk7CiAgICB1aW50MzJfdCBmcHMgPSBmcHNfeDEwMCAvIDEwMDsKICAgIGlmIChmcHMgPCAxKSBmcHMgPSAxOwogICAgZi5zZWVrKHN0cmhSYXRlUG9zKTsgdzMyKGYsIGZwcyk7CiAgICBmLnNlZWsoc3RyaExlblBvcyk7ICB3MzIoZiwgZnJhbWVDb3VudCk7CiAgICAvLyBmaXggYXZpaCBtaWNyb3NlYy9mcmFtZSB0byBtYXRjaCBtZWFzdXJlZCBmcHMKICAgIGYuc2VlayhhdmloRnJhbWVzUG9zIC0gMTYpOyB3MzIoZiwgMTAwMDAwMCAvIGZwcyk7CiAgICBmLmNsb3NlKCk7CiAgfQp9OwoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFJFQ09SRElORyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKYm9vbCByZWNvcmRDbGlwKGNvbnN0IGNoYXIqIHBhdGgsIHVuc2lnbmVkIGxvbmcgbXMpIHsKICBBdmlXcml0ZXIgYXZpOwogIGlmICghYXZpLm9wZW4ocGF0aCwgQ0FNX1csIENBTV9IKSkgewogICAgU2VyaWFsLnByaW50bG4oIltyZWNdIFNEIG9wZW4gZmFpbGVkIik7CiAgICByZXR1cm4gZmFsc2U7CiAgfQogIFNlcmlhbC5wcmludGxuKCJbcmVjXSByZWNvcmRpbmcuLi4iKTsKICBsZWQodHJ1ZSk7CiAgdW5zaWduZWQgbG9uZyB0MCA9IG1pY3JvcygpOwogIHVpbnQzMl90IGZyYW1lcyA9IDA7CiAgd2hpbGUgKG1pY3JvcygpIC0gdDAgPCBtcyAqIDEwMDBVTCkgewogICAgY2FtZXJhX2ZiX3QqIGZiID0gZXNwX2NhbWVyYV9mYl9nZXQoKTsKICAgIGlmICghZmIpIGNvbnRpbnVlOwogICAgLy8gc29mdHdhcmUgSlBFRyBlbmNvZGUgKHNlZSBPVjU2NDAgcXVpcmsgYWJvdmUpCiAgICB1aW50OF90ICpqcGcgPSBOVUxMOwogICAgc2l6ZV90IGpwZ19sZW4gPSAwOwogICAgaWYgKGZtdDJqcGcoZmItPmJ1ZiwgZmItPmxlbiwgZmItPndpZHRoLCBmYi0+aGVpZ2h0LCBQSVhGT1JNQVRfUkdCNTY1LCAxMiwgJmpwZywgJmpwZ19sZW4pKSB7CiAgICAgIGF2aS5hZGRGcmFtZShqcGcsIGpwZ19sZW4pOwogICAgICBmcmVlKGpwZyk7CiAgICAgIGZyYW1lcysrOwogICAgfQogICAgZXNwX2NhbWVyYV9mYl9yZXR1cm4oZmIpOwogICAgaWYgKChmcmFtZXMgJSAyMCkgPT0gMCkgZGVsYXkoMSk7ICAvLyBmZWVkIHRoZSB0YXNrIHdhdGNoZG9nCiAgfQogIHVuc2lnbmVkIGxvbmcgZWxhcHNlZCA9IG1pY3JvcygpIC0gdDA7CiAgdWludDMyX3QgZnBzX3gxMDAgPSBlbGFwc2VkID8gKHVpbnQzMl90KSgodWludDY0X3QpZnJhbWVzICogMTAwMDAwMCAqIDEwMCAvIGVsYXBzZWQpIDogMTUwMDsKICBhdmkuY2xvc2UoZnBzX3gxMDAsIENBTV9XLCBDQU1fSCk7CiAgbGVkKGZhbHNlKTsKICBTZXJpYWwucHJpbnRmKCJbcmVjXSBkb25lOiAldSBmcmFtZXMgaW4gJS4xZnMgKCUuMWYgZnBzKVxuIiwKICAgICAgICAgICAgICAgIGZyYW1lcywgZWxhcHNlZCAvIDFlNiwgZnJhbWVzICogMWU2IC8gZWxhcHNlZCk7CiAgcmV0dXJuIHRydWU7Cn0KCmJvb2wgdXBsb2FkQ2xpcChjb25zdCBjaGFyKiBwYXRoKSB7CiAgRmlsZSBmID0gU0RfTU1DLm9wZW4ocGF0aCwgRklMRV9SRUFEKTsKICBpZiAoIWYpIHsgU2VyaWFsLnByaW50bG4oIlt1cF0gb3BlbiBmYWlsZWQiKTsgcmV0dXJuIGZhbHNlOyB9CiAgc2l6ZV90IGxlbiA9IGYuc2l6ZSgpOwogIFNlcmlhbC5wcmludGYoIlt1cF0gUE9TVCAldSBieXRlcyAtPiAlc1xuIiwgKHVuc2lnbmVkKWxlbiwgVVBMT0FEX1VSTCk7CgogIEhUVFBDbGllbnQgaHR0cDsKICBodHRwLnNldFRpbWVvdXQoOTAwMDApOwogIGh0dHAuYmVnaW4oVVBMT0FEX1VSTCk7CiAgaHR0cC5hZGRIZWFkZXIoIkNvbnRlbnQtVHlwZSIsICJ2aWRlby94LW1zdmlkZW8iKTsKICBpbnQgY29kZSA9IGh0dHAuc2VuZFJlcXVlc3QoIlBPU1QiLCAmZiwgbGVuKTsKICBmLmNsb3NlKCk7CiAgU2VyaWFsLnByaW50ZigiW3VwXSByZXNwb25zZTogJWQgJXNcbiIsIGNvZGUsIGh0dHAuZ2V0U3RyaW5nKCkuY19zdHIoKSk7CiAgaHR0cC5lbmQoKTsKICByZXR1cm4gY29kZSA9PSAyMDA7Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBEVlIgKGJ1cnN0KSAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCnZvaWQgZHZyV3JpdGVyVGFzayh2b2lkKiBwYXJhbSkgewogICh2b2lkKXBhcmFtOwogIGludCBpZHggPSAwOwogIHdoaWxlIChpZHggPCBEVlJfTl9TSE9UUyAmJiAhZHZyQWJvcnQpIHsKICAgIGNhbWVyYV9mYl90KiBmYiA9IE5VTEw7CiAgICBpZiAoeFF1ZXVlUmVjZWl2ZShkdnJRdWV1ZSwgJmZiLCBwZE1TX1RPX1RJQ0tTKDIwMDApKSAhPSBwZFRSVUUpIGNvbnRpbnVlOwogICAgaWYgKCFmYikgY29udGludWU7CiAgICBjaGFyIHBhdGhbMzJdOwogICAgc25wcmludGYocGF0aCwgc2l6ZW9mKHBhdGgpLCAiL2J1cnN0L3JhdyUwMmQuYmluIiwgaWR4KTsKICAgIEZpbGUgZiA9IFNEX01NQy5vcGVuKHBhdGgsIEZJTEVfV1JJVEUpOwogICAgYm9vbCBvayA9IGYgJiYgKGYud3JpdGUoZmItPmJ1ZiwgZmItPmxlbikgPT0gZmItPmxlbik7CiAgICBpZiAoZikgZi5jbG9zZSgpOwogICAgZXNwX2NhbWVyYV9mYl9yZXR1cm4oZmIpOwogICAgaWYgKG9rKSB7IGlkeCsrOyBkdnJGaWxlc1dyaXR0ZW4gPSBpZHg7IH0KICAgIGVsc2UgYnJlYWs7CiAgfQogIHhTZW1hcGhvcmVHaXZlKGR2ckRvbmVTZW0pOwogIHZUYXNrRGVsZXRlKE5VTEwpOwp9Cgpib29sIGR2ckNhcHR1cmUoKSB7CiAgU2VyaWFsLnByaW50bG4oIltkdnJdIFBIQVNFIDE6IENBUFRVUkUiKTsKICBkdnJRdWV1ZSA9IHhRdWV1ZUNyZWF0ZShEVlJfRkJfREVQVEgsIHNpemVvZihjYW1lcmFfZmJfdCopKTsKICBkdnJEb25lU2VtID0geFNlbWFwaG9yZUNyZWF0ZUJpbmFyeSgpOwogIGlmICghZHZyUXVldWUgfHwgIWR2ckRvbmVTZW0pIHJldHVybiBmYWxzZTsKICBkdnJGaWxlc1dyaXR0ZW4gPSAwOyBkdnJBYm9ydCA9IGZhbHNlOyBkdnJGcmFtZUJ5dGVzID0gMDsKCiAgaWYgKHhUYXNrQ3JlYXRlUGlubmVkVG9Db3JlKGR2cldyaXRlclRhc2ssICJkdnJXIiwgODE5MiwgTlVMTCwgMSwgTlVMTCwgMCkgIT0gcGRQQVNTKQogICAgcmV0dXJuIGZhbHNlOwoKICBib29sIG9rID0gdHJ1ZTsKICBpbnQgY2FwdHVyZWQgPSAwOwogIHdoaWxlIChjYXB0dXJlZCA8IERWUl9OX1NIT1RTICYmIG9rKSB7CiAgICBjYW1lcmFfZmJfdCogZmIgPSBlc3BfY2FtZXJhX2ZiX2dldCgpOwogICAgaWYgKCFmYikgeyBkZWxheSgyMDApOyBjb250aW51ZTsgfQogICAgaWYgKGR2ckZyYW1lQnl0ZXMgPT0gMCkgewogICAgICBkdnJGcmFtZUJ5dGVzID0gZmItPmxlbjsKICAgICAgU2VyaWFsLnByaW50ZigiW2R2cl0gZnJhbWUgc2l6ZTogJXVcbiIsICh1bnNpZ25lZClkdnJGcmFtZUJ5dGVzKTsKICAgIH0KICAgIGlmICh4UXVldWVTZW5kKGR2clF1ZXVlLCAmZmIsIHBkTVNfVE9fVElDS1MoNTAwMCkpICE9IHBkVFJVRSkgewogICAgICBlc3BfY2FtZXJhX2ZiX3JldHVybihmYik7IG9rID0gZmFsc2U7IGJyZWFrOwogICAgfQogICAgY2FwdHVyZWQrKzsKICAgIFNlcmlhbC5wcmludGYoIltkdnJdIGNhcHR1cmVkICVkLyVkXG4iLCBjYXB0dXJlZCwgRFZSX05fU0hPVFMpOwogIH0KCiAgaWYgKG9rKSB7CiAgICBpZiAoeFNlbWFwaG9yZVRha2UoZHZyRG9uZVNlbSwgcGRNU19UT19USUNLUyg5MDAwMCkpICE9IHBkVFJVRSkgb2sgPSBmYWxzZTsKICB9IGVsc2UgewogICAgZHZyQWJvcnQgPSB0cnVlOwogICAgeFNlbWFwaG9yZVRha2UoZHZyRG9uZVNlbSwgcGRNU19UT19USUNLUygxMDAwMCkpOwogIH0KICAvLyBkcmFpbgogIGlmIChkdnJRdWV1ZSkgewogICAgY2FtZXJhX2ZiX3QqIGZiOwogICAgd2hpbGUgKHhRdWV1ZVJlY2VpdmUoZHZyUXVldWUsICZmYiwgMCkgPT0gcGRUUlVFKQogICAgICBpZiAoZmIpIGVzcF9jYW1lcmFfZmJfcmV0dXJuKGZiKTsKICAgIHZRdWV1ZURlbGV0ZShkdnJRdWV1ZSk7CiAgfQogIHZTZW1hcGhvcmVEZWxldGUoZHZyRG9uZVNlbSk7CiAgZHZyUXVldWUgPSBOVUxMOwogIFNlcmlhbC5wcmludGYoIltkdnJdIFBIQVNFIDEgJXM6ICVkLyVkXG4iLCBvaz8iT0siOiJGQUlMIiwgZHZyRmlsZXNXcml0dGVuLCBEVlJfTl9TSE9UUyk7CiAgcmV0dXJuIG9rICYmIGR2ckZpbGVzV3JpdHRlbiA9PSBEVlJfTl9TSE9UUzsKfQoKYm9vbCBkdnJFbmNvZGUoKSB7CiAgU2VyaWFsLnByaW50bG4oIltkdnJdIFBIQVNFIDI6IEVOQ09ERSIpOwogIGlmICghZHZyRnJhbWVCeXRlcykgcmV0dXJuIGZhbHNlOwogIC8vIEJvcnJvdyBhIGNhbWVyYSBidWZmZXIgYXMgc2NyYXRjaAogIGNhbWVyYV9mYl90KiBzY3JhdGNoID0gZXNwX2NhbWVyYV9mYl9nZXQoKTsKICBpZiAoIXNjcmF0Y2ggfHwgc2NyYXRjaC0+bGVuIDwgZHZyRnJhbWVCeXRlcykgewogICAgaWYgKHNjcmF0Y2gpIGVzcF9jYW1lcmFfZmJfcmV0dXJuKHNjcmF0Y2gpOwogICAgcmV0dXJuIGZhbHNlOwogIH0KICBpbnQgZG9uZSA9IDA7CiAgZm9yIChpbnQgaSA9IDA7IGkgPCBEVlJfTl9TSE9UUzsgaSsrKSB7CiAgICBjaGFyIHJwWzMyXSwganBbMzJdOwogICAgc25wcmludGYocnAsIHNpemVvZihycCksICIvYnVyc3QvcmF3JTAyZC5iaW4iLCBpKTsKICAgIHNucHJpbnRmKGpwLCBzaXplb2YoanApLCAiL2J1cnN0L2pwZyUwMmQuanBnIiwgaSk7CiAgICBGaWxlIGZyID0gU0RfTU1DLm9wZW4ocnAsIEZJTEVfUkVBRCk7CiAgICBpZiAoIWZyKSBjb250aW51ZTsKICAgIGlmIChmci5yZWFkKHNjcmF0Y2gtPmJ1ZiwgZHZyRnJhbWVCeXRlcykgIT0gZHZyRnJhbWVCeXRlcykgeyBmci5jbG9zZSgpOyBjb250aW51ZTsgfQogICAgZnIuY2xvc2UoKTsKICAgIHVpbnQ4X3QqIGpwZyA9IE5VTEw7IHNpemVfdCBqbCA9IDA7CiAgICBpZiAoIWZtdDJqcGcoc2NyYXRjaC0+YnVmLCBkdnJGcmFtZUJ5dGVzLCBEVlJfVywgRFZSX0gsIFBJWEZPUk1BVF9SR0I1NjUsCiAgICAgICAgICAgICAgICAgRFZSX0pQRUdfUVVBTElUWSwgJmpwZywgJmpsKSB8fCAhanBnKSBjb250aW51ZTsKICAgIEZpbGUgZmogPSBTRF9NTUMub3BlbihqcCwgRklMRV9XUklURSk7CiAgICBib29sIHcgPSBmaiAmJiAoZmoud3JpdGUoanBnLCBqbCkgPT0gamwpOwogICAgaWYgKGZqKSBmai5jbG9zZSgpOwogICAgZnJlZShqcGcpOwogICAgaWYgKHcpIHsgZG9uZSsrOyBTZXJpYWwucHJpbnRmKCJbZHZyXSBlbmMgJWQ6ICV1IGJ5dGVzXG4iLCBpLCAodW5zaWduZWQpamwpOyB9CiAgfQogIGVzcF9jYW1lcmFfZmJfcmV0dXJuKHNjcmF0Y2gpOwogIFNlcmlhbC5wcmludGYoIltkdnJdIFBIQVNFIDI6ICVkLyVkXG4iLCBkb25lLCBEVlJfTl9TSE9UUyk7CiAgcmV0dXJuIGRvbmUgPT0gRFZSX05fU0hPVFM7Cn0KCmJvb2wgZHZyU3RyZWFtKCkgewogIFNlcmlhbC5wcmludGxuKCJbZHZyXSBQSEFTRSAzOiBTVFJFQU0iKTsKICB3aWZpRW5zdXJlKCk7CiAgaWYgKFdpRmkuc3RhdHVzKCkgIT0gV0xfQ09OTkVDVEVEKSByZXR1cm4gZmFsc2U7CiAgaW50IGRvbmUgPSAwOwogIGZvciAoaW50IGkgPSAwOyBpIDwgRFZSX05fU0hPVFM7IGkrKykgewogICAgY2hhciBqcFszMl07IHNucHJpbnRmKGpwLCBzaXplb2YoanApLCAiL2J1cnN0L2pwZyUwMmQuanBnIiwgaSk7CiAgICBGaWxlIGYgPSBTRF9NTUMub3BlbihqcCwgRklMRV9SRUFEKTsKICAgIGlmICghZikgY29udGludWU7CiAgICBzaXplX3QgbGVuID0gZi5zaXplKCk7CiAgICB1aW50OF90KiBidWYgPSAodWludDhfdCopcHNfbWFsbG9jKGxlbik7CiAgICBpZiAoIWJ1ZikgeyBmLmNsb3NlKCk7IGNvbnRpbnVlOyB9CiAgICBmLnJlYWQoYnVmLCBsZW4pOyBmLmNsb3NlKCk7CiAgICBIVFRQQ2xpZW50IGh0dHA7CiAgICBodHRwLmJlZ2luKERWUl9VUkwpOwogICAgaHR0cC5hZGRIZWFkZXIoIkNvbnRlbnQtVHlwZSIsICJpbWFnZS9qcGVnIik7CiAgICBodHRwLnNldFRpbWVvdXQoMTUwMDApOwogICAgaW50IGNvZGUgPSBodHRwLlBPU1QoYnVmLCBsZW4pOwogICAgaHR0cC5lbmQoKTsgZnJlZShidWYpOwogICAgU2VyaWFsLnByaW50ZigiW2R2cl0gc3RyZWFtICVkIC0+ICVkXG4iLCBpLCBjb2RlKTsKICAgIGlmIChjb2RlID09IDIwMCkgZG9uZSsrOwogICAgZGVsYXkoMTUwKTsKICB9CiAgU2VyaWFsLnByaW50ZigiW2R2cl0gUEhBU0UgMzogJWQvJWRcbiIsIGRvbmUsIERWUl9OX1NIT1RTKTsKICByZXR1cm4gZG9uZSA9PSBEVlJfTl9TSE9UUzsKfQoKdm9pZCBydW5EVlIoKSB7CiAgZHZyUnVubmluZyA9IHRydWU7IGxlZCh0cnVlKTsKICBTZXJpYWwucHJpbnRsbigiXG5bZHZyXSA9PT09PSBTVEFSVCA9PT09PSIpOwogIGJvb2wgYyA9IGR2ckNhcHR1cmUoKTsKICBib29sIGUgPSBjID8gZHZyRW5jb2RlKCkgOiBmYWxzZTsKICBib29sIHMgPSBlID8gZHZyU3RyZWFtKCkgOiBmYWxzZTsKICBTZXJpYWwucHJpbnRmKCJbZHZyXSA9PT09PSBET05FOiBjYXA9JXMgZW5jPSVzIHN0cmVhbT0lcyA9PT09PVxuIiwKICAgICAgICAgICAgICAgIGM/Ik9LIjoiRkFJTCIsIGU/Ik9LIjoiRkFJTCIsIHM/Ik9LIjoiRkFJTCIpOwogIGxlZChmYWxzZSk7IGR2clJ1bm5pbmcgPSBmYWxzZTsKfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFNldHVwIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8Kdm9pZCBzZXR1cCgpIHsKICBTZXJpYWwuYmVnaW4oMTE1MjAwKTsKICBkZWxheSgxNTAwKTsKICBTZXJpYWwucHJpbnRsbigiXG5baG9iLW1lcmdlZF0gYm9vdCIpOwogIHBpbk1vZGUoTEVEX0dQSU8sIE9VVFBVVCk7IGxlZChmYWxzZSk7CgogIGlmICghcHNyYW1Gb3VuZCgpKSBTZXJpYWwucHJpbnRsbigiW3dhcm5dIG5vIFBTUkFNIik7CiAgU2VyaWFsLnByaW50ZigiW3BzcmFtXSAldVxuIiwgRVNQLmdldEZyZWVQc3JhbSgpKTsKCiAgU0RfTU1DLnNldFBpbnMoU0RfQ0xLLCBTRF9DTUQsIFNEX0QwKTsKICBpZiAoIVNEX01NQy5iZWdpbigiL3NkY2FyZCIsIHRydWUpKSB7CiAgICBTZXJpYWwucHJpbnRsbigiW3NkXSBGQUlMRUQsIGhhbHRpbmciKTsgd2hpbGUoMSkgZGVsYXkoMTAwMCk7CiAgfQogIFNEX01NQy5ta2RpcigiL2J1cnN0Iik7CiAgU2VyaWFsLnByaW50bG4oIltzZF0gb2siKTsKCiAgLy8gQ2FtZXJhIHN0YXlzIGluaXRpYWxpemVkIHBlcm1hbmVudGx5IChubyBkZWluaXQvZnJhZ21lbnRhdGlvbikKICBpZiAoIWluaXRDYW1lcmEoKSkgewogICAgU2VyaWFsLnByaW50bG4oIltGQVRBTF0gY2FtIik7IHdoaWxlKDEpIGRlbGF5KDEwMDApOwogIH0KCiAgd2lmaUVuc3VyZSgpOwogIG1xdHQuc2V0U2VydmVyKE1RVFRfSE9TVCwgTVFUVF9QT1JUKTsKICBtcXR0LnNldENhbGxiYWNrKG1xdHRDYWxsYmFjayk7CiAgbXF0dEVuc3VyZSgpOwogIFNlcmlhbC5wcmludGxuKCJbaG9iLW1lcmdlZF0gcmVhZHkuIGtpdGNoZW4vaG9iPXZpZGVvLCBob2IvY2FtX3Rlc3Q9RFZSIGJ1cnN0Iik7Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gTG9vcCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCnZvaWQgbG9vcCgpIHsKICB3aWZpRW5zdXJlKCk7CiAgbXF0dEVuc3VyZSgpOwogIG1xdHQubG9vcCgpOwoKICAvLyBEVlIgaGFzIHByaW9yaXR5IChvbmUtc2hvdCkKICBpZiAoZHZyUmVxdWVzdGVkICYmICFkdnJSdW5uaW5nKSB7CiAgICBkdnJSZXF1ZXN0ZWQgPSBmYWxzZTsKICAgIHJ1bkRWUigpOwogICAgcmV0dXJuOwogIH0KCiAgLy8gUHJvZHVjdGlvbjogaG9iIG9uIC0+IHZpZGVvIGV2ZXJ5IDMwcwogIGlmICghaG9iQWN0aXZlKSB7IGRlbGF5KDIwMCk7IHJldHVybjsgfQoKICB1bnNpZ25lZCBsb25nIGN5Y2xlU3RhcnQgPSBtaWxsaXMoKTsKICBjb25zdCBjaGFyKiBjbGlwUGF0aCA9ICIvY2xpcC5hdmkiOwogIGlmIChyZWNvcmRDbGlwKGNsaXBQYXRoLCBDTElQX01TKSkgewogICAgaWYgKCF1cGxvYWRDbGlwKGNsaXBQYXRoKSkgewogICAgICBTZXJpYWwucHJpbnRsbigiW3VwXSB1cGxvYWQgZmFpbGVkLCB3aWxsIHJldHJ5IG5leHQgY3ljbGUiKTsKICAgIH0KICAgIFNEX01NQy5yZW1vdmUoY2xpcFBhdGgpOwogIH0KCiAgd2hpbGUgKG1pbGxpcygpIC0gY3ljbGVTdGFydCA8IFBFUklPRF9NUykgewogICAgbXF0dC5sb29wKCk7CiAgICBpZiAoIWhvYkFjdGl2ZSB8fCBkdnJSZXF1ZXN0ZWQpIGJyZWFrOwogICAgZGVsYXkoMTUwKTsKICB9Cn0K
+/*
+ * esp32-boiling-hub.ino — ESP32-S3 hob boiling-water watcher
+ *
+ * PRODUCTION (kitchen/hob):
+ *   - "on"  -> every 30s, record 10s MJPEG AVI to SD, POST to /upload
+ *   - "off" -> idle
+ *   Bridge transcodes, asks Gemini, publishes verdict to hob/boiling.
+ *
+ * DVR BURST (hob/cam_test):
+ *   - "ON" -> one-shot: 10 XGA frames -> SD -> encode -> POST to /dvr
+ *   - Bridge stitches to MP4, asks Gemini, publishes verdict.
+ *
+ * Camera: XGA 1024x768 RGB565, fb_count=2 (unified, no reinit between modes).
+ *   2 x 1.5MB = 3MB. Phase 2 borrows a camera buffer as encode scratch.
+ *   Camera stays initialized permanently (avoids deinit/reinit fragmentation).
+ *
+ * BOARD: ESP32S3 Dev Module, USB CDC On Boot Enabled, 16MB Flash,
+ *   16M (3MB APP/9.9MB FATFS), OPI PSRAM, 921600 upload.
+ */
+
+#include <Arduino.h>
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include <HTTPClient.h>
+#include "esp_camera.h"
+#include "img_converters.h"
+#include "SD_MMC.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/queue.h"
+#include "freertos/semphr.h"
+
+/* ----------------------------- CONFIGURATION ----------------------------- */
+const char* WIFI_SSID     = "YOUR_WIFI_SSID";
+const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
+
+const char* MQTT_HOST  = "YOUR_MQTT_BROKER_IP";
+const int   MQTT_PORT  = 1883;
+const char* MQTT_TOPIC = "kitchen/hob";       // "on"/"off" from HA
+const char* MQTT_TEST_TOPIC = "hob/cam_test"; // "ON" = DVR burst (one-shot)
+const char* MQTT_USER  = "YOUR_MQTT_USER";
+const char* MQTT_PASS  = "YOUR_MQTT_PASSWORD";
+
+const char* UPLOAD_URL = "http://YOUR_BRIDGE_HOST_IP:8099/upload";
+const char* DVR_URL    = "http://YOUR_BRIDGE_HOST_IP:8099/dvr";
+
+const unsigned long CLIP_MS   = 10000;  // record 10s ...
+const unsigned long PERIOD_MS = 30000;  // ... every 30s while hob is on
+
+// DVR config
+#define DVR_W 1024
+#define DVR_H 768
+#define DVR_FRAME_BYTES (DVR_W * DVR_H * 2)  // 1,572,864
+#define DVR_N_SHOTS 10
+#define DVR_JPEG_QUALITY 30
+#define DVR_FB_DEPTH 2
+
+// Pins
+#define PWDN_GPIO_NUM  -1
+#define RESET_GPIO_NUM -1
+#define XCLK_GPIO_NUM  15
+#define SIOD_GPIO_NUM  4
+#define SIOC_GPIO_NUM  5
+#define Y9_GPIO_NUM    16
+#define Y8_GPIO_NUM    17
+#define Y7_GPIO_NUM    18
+#define Y6_GPIO_NUM    12
+#define Y5_GPIO_NUM    10
+#define Y4_GPIO_NUM    8
+#define Y3_GPIO_NUM    9
+#define Y2_GPIO_NUM    11
+#define VSYNC_GPIO_NUM 6
+#define HREF_GPIO_NUM  7
+#define PCLK_GPIO_NUM  13
+#define SD_CLK 39
+#define SD_CMD 38
+#define SD_D0  40
+#define LED_GPIO 2
+
+#define CAM_W 1024
+#define CAM_H 768
+
+/* --------------------------------- STATE --------------------------------- */
+WiFiClient wifiClient;
+PubSubClient mqtt(wifiClient);
+volatile bool hobActive = false;
+volatile bool dvrRequested = false;
+volatile bool dvrRunning = false;
+
+// DVR FreeRTOS
+static QueueHandle_t dvrQueue = NULL;
+static SemaphoreHandle_t dvrDoneSem = NULL;
+static volatile int dvrFilesWritten = 0;
+static volatile bool dvrAbort = false;
+static size_t dvrFrameBytes = 0;
+
+static unsigned long lastWifiAttempt = 0;
+
+void led(bool on) {
+  if (LED_GPIO >= 0) digitalWrite(LED_GPIO, on ? HIGH : LOW);
+}
+
+/* ------------------------------ WiFi / MQTT ------------------------------ */
+void wifiEnsure() {
+  if (WiFi.status() == WL_CONNECTED) return;
+  unsigned long now = millis();
+  if (now - lastWifiAttempt < 30000) return;
+  lastWifiAttempt = now;
+  Serial.printf("[wifi] reconnecting to %s...", WIFI_SSID);
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_OFF);
+  delay(500);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  int tries = 0;
+  while (WiFi.status() != WL_CONNECTED && tries < 40) {
+    delay(500); Serial.print("."); tries++;
+    if (WiFi.status() == WL_CONNECT_FAILED) break;
+  }
+  Serial.println(WiFi.status() == WL_CONNECTED ? " ok" : " FAILED");
+}
+
+void mqttCallback(char* topic, byte* payload, unsigned int len) {
+  String t(topic), p;
+  for (unsigned int i = 0; i < len; i++) p += (char)payload[i];
+  p.trim();
+  Serial.printf("[mqtt] %s = %s\n", t.c_str(), p.c_str());
+  if (t == MQTT_TOPIC) {
+    hobActive = (p == "on");
+    Serial.printf("[hob] active=%d\n", hobActive);
+  } else if (t == MQTT_TEST_TOPIC && p == "ON" && !dvrRunning && !dvrRequested) {
+    Serial.println("[dvr] trigger received");
+    dvrRequested = true;
+  }
+}
+
+void mqttEnsure() {
+  if (WiFi.status() != WL_CONNECTED) return;
+  if (mqtt.connected()) return;
+  Serial.print("[mqtt] connecting... ");
+  String cid = "hob-merged-" + String((uint32_t)ESP.getEfuseMac(), HEX);
+  bool ok = mqtt.connect(cid.c_str(), MQTT_USER, MQTT_PASS);
+  Serial.println(ok ? "ok" : "FAILED");
+  if (ok) {
+    mqtt.subscribe(MQTT_TOPIC);
+    mqtt.subscribe(MQTT_TEST_TOPIC);
+  }
+}
+
+/* -------------------------------- Camera --------------------------------- */
+bool initCamera() {
+  camera_config_t c;
+  c.ledc_channel = LEDC_CHANNEL_0;
+  c.ledc_timer = LEDC_TIMER_0;
+  c.pin_d0 = Y2_GPIO_NUM;  c.pin_d1 = Y3_GPIO_NUM;
+  c.pin_d2 = Y4_GPIO_NUM;  c.pin_d3 = Y5_GPIO_NUM;
+  c.pin_d4 = Y6_GPIO_NUM;  c.pin_d5 = Y7_GPIO_NUM;
+  c.pin_d6 = Y8_GPIO_NUM;  c.pin_d7 = Y9_GPIO_NUM;
+  c.pin_xclk = XCLK_GPIO_NUM;
+  c.pin_pclk = PCLK_GPIO_NUM;
+  c.pin_vsync = VSYNC_GPIO_NUM;
+  c.pin_href = HREF_GPIO_NUM;
+  c.pin_sccb_sda = SIOD_GPIO_NUM;
+  c.pin_sccb_scl = SIOC_GPIO_NUM;
+  c.pin_pwdn = PWDN_GPIO_NUM;
+  c.pin_reset = RESET_GPIO_NUM;
+  c.xclk_freq_hz = 20000000;
+  c.pixel_format = PIXFORMAT_RGB565;
+  c.frame_size = FRAMESIZE_XGA;
+  c.jpeg_quality = 12;
+  c.fb_count = DVR_FB_DEPTH;  // 2 x 1.5MB
+  c.fb_location = CAMERA_FB_IN_PSRAM;
+  c.grab_mode = CAMERA_GRAB_LATEST;
+  esp_err_t err = esp_camera_init(&c);
+  if (err != ESP_OK) {
+    Serial.printf("[cam] init FAILED 0x%x\n", err);
+    return false;
+  }
+  Serial.println("[cam] init ok, XGA, fb_count=2");
+  return true;
+}
+
+/* --------------------------- MINIMAL AVI WRITER -------------------------- */
+// Writes a playable MJPEG AVI. All integers little-endian (native on ESP32).
+
+static void w32(File &f, uint32_t v) { f.write((uint8_t*)&v, 4); }
+
+struct AviWriter {
+  File f;
+  uint32_t riffSizePos, hdrlLenPos, moviLenPos;
+  uint32_t avihFramesPos, strhRatePos, strhLenPos, strlLenPos;
+  uint32_t moviDataStart;
+  uint32_t frameCount = 0;
+  // index entries kept small: 10 s @ ~20 fps worst case = 200 entries
+  struct Idx { uint32_t offset, size; };
+  Idx idx[400];
+  uint16_t idxCount = 0;
+
+  bool open(const char* path, uint16_t w, uint16_t h) {
+    f = SD_MMC.open(path, FILE_WRITE);
+    if (!f) return false;
+
+    f.write((uint8_t*)"RIFF", 4);
+    riffSizePos = f.position(); w32(f, 0);
+    f.write((uint8_t*)"AVI ", 4);
+
+    f.write((uint8_t*)"LIST", 4);
+    hdrlLenPos = f.position(); w32(f, 0);
+    f.write((uint8_t*)"hdrl", 4);
+
+    // avih
+    f.write((uint8_t*)"avih", 4); w32(f, 56);
+    w32(f, 66667);            // dwMicroSecPerFrame (15 fps nominal, fixed up later)
+    w32(f, 0);                // dwMaxBytesPerSec
+    w32(f, 0);                // dwPaddingGranularity
+    w32(f, 0x10);             // dwFlags = AVIF_HASINDEX
+    avihFramesPos = f.position(); w32(f, 0);  // dwTotalFrames (fixup)
+    w32(f, 0);                // dwInitialFrames
+    w32(f, 1);                // dwStreams
+    w32(f, 0);                // dwSuggestedBufferSize
+    w32(f, w); w32(f, h);
+    for (int i = 0; i < 4; i++) w32(f, 0);    // dwReserved[4]
+
+    // strl
+    f.write((uint8_t*)"LIST", 4);
+    strlLenPos = f.position(); w32(f, 0);
+    f.write((uint8_t*)"strl", 4);
+
+    // strh (AVISTREAMHEADER = 64 bytes)
+    f.write((uint8_t*)"strh", 4); w32(f, 64);
+    f.write((uint8_t*)"vids", 4);             // fccType
+    f.write((uint8_t*)"MJPG", 4);             // fccHandler
+    w32(f, 0); w32(f, 0);                     // dwFlags; wPriority+wLanguage
+    w32(f, 0);                                // dwInitialFrames
+    w32(f, 1);                                // dwScale
+    strhRatePos = f.position(); w32(f, 15);   // dwRate (fixup)
+    w32(f, 0);                                // dwStart
+    strhLenPos = f.position(); w32(f, 0);     // dwLength (fixup)
+    w32(f, 0);                                // dwSuggestedBufferSize
+    w32(f, 0xFFFFFFFF);                       // dwQuality
+    w32(f, 0);                                // dwSampleSize
+    w32(f, 0); w32(f, 0); w32(f, w); w32(f, h); // rcFrame
+
+    // strf (BITMAPINFOHEADER)
+    f.write((uint8_t*)"strf", 4); w32(f, 40);
+    w32(f, 40); w32(f, w); w32(f, h);
+    f.write((uint8_t*)"\x01\x00\x18\x00", 4); // planes=1, bitcount=24
+    f.write((uint8_t*)"MJPG", 4);             // biCompression
+    w32(f, (uint32_t)w * h * 3);              // biSizeImage (estimate)
+    w32(f, 0); w32(f, 0); w32(f, 0); w32(f, 0);
+
+    uint32_t strlEnd = f.position();
+    f.seek(strlLenPos); w32(f, strlEnd - strlLenPos - 4); f.seek(strlEnd);
+
+    // movi
+    f.write((uint8_t*)"LIST", 4);
+    moviLenPos = f.position(); w32(f, 0);
+    f.write((uint8_t*)"movi", 4);
+    moviDataStart = f.position();
+    return true;
+  }
+
+  void addFrame(const uint8_t* data, uint32_t len) {
+    if (idxCount >= 400) return;
+    f.write((uint8_t*)"00dc", 4);
+    w32(f, len);
+    uint32_t dataPos = f.position();
+    f.write(data, len);
+    if (len & 1) f.write((uint8_t)0);  // pad to even
+    idx[idxCount].offset = dataPos - moviDataStart;
+    idx[idxCount].size = len;
+    idxCount++;
+    frameCount++;
+  }
+
+  // fps_x100 = frames per second * 100, for exact back-patch
+  void close(uint32_t fps_x100, uint16_t w, uint16_t h) {
+    uint32_t moviEnd = f.position();
+    f.seek(moviLenPos); w32(f, moviEnd - moviLenPos - 4); f.seek(moviEnd);
+
+    f.write((uint8_t*)"idx1", 4);
+    w32(f, idxCount * 16);
+    for (uint16_t i = 0; i < idxCount; i++) {
+      f.write((uint8_t*)"00dc", 4);
+      w32(f, 0x10);
+      w32(f, idx[i].offset);
+      w32(f, idx[i].size);
+    }
+
+    uint32_t end = f.position();
+    f.seek(riffSizePos); w32(f, end - 8);
+    f.seek(hdrlLenPos);  w32(f, moviLenPos - hdrlLenPos - 4);
+    f.seek(avihFramesPos); w32(f, frameCount);
+    uint32_t fps = fps_x100 / 100;
+    if (fps < 1) fps = 1;
+    f.seek(strhRatePos); w32(f, fps);
+    f.seek(strhLenPos);  w32(f, frameCount);
+    // fix avih microsec/frame to match measured fps
+    f.seek(avihFramesPos - 16); w32(f, 1000000 / fps);
+    f.close();
+  }
+};
+
+/* ------------------------------ RECORDING -------------------------------- */
+
+bool recordClip(const char* path, unsigned long ms) {
+  AviWriter avi;
+  if (!avi.open(path, CAM_W, CAM_H)) {
+    Serial.println("[rec] SD open failed");
+    return false;
+  }
+  Serial.println("[rec] recording...");
+  led(true);
+  unsigned long t0 = micros();
+  uint32_t frames = 0;
+  while (micros() - t0 < ms * 1000UL) {
+    camera_fb_t* fb = esp_camera_fb_get();
+    if (!fb) continue;
+    // software JPEG encode (see OV5640 quirk above)
+    uint8_t *jpg = NULL;
+    size_t jpg_len = 0;
+    if (fmt2jpg(fb->buf, fb->len, fb->width, fb->height, PIXFORMAT_RGB565, 12, &jpg, &jpg_len)) {
+      avi.addFrame(jpg, jpg_len);
+      free(jpg);
+      frames++;
+    }
+    esp_camera_fb_return(fb);
+    if ((frames % 20) == 0) delay(1);  // feed the task watchdog
+  }
+  unsigned long elapsed = micros() - t0;
+  uint32_t fps_x100 = elapsed ? (uint32_t)((uint64_t)frames * 1000000 * 100 / elapsed) : 1500;
+  avi.close(fps_x100, CAM_W, CAM_H);
+  led(false);
+  Serial.printf("[rec] done: %u frames in %.1fs (%.1f fps)\n",
+                frames, elapsed / 1e6, frames * 1e6 / elapsed);
+  return true;
+}
+
+bool uploadClip(const char* path) {
+  File f = SD_MMC.open(path, FILE_READ);
+  if (!f) { Serial.println("[up] open failed"); return false; }
+  size_t len = f.size();
+  Serial.printf("[up] POST %u bytes -> %s\n", (unsigned)len, UPLOAD_URL);
+
+  HTTPClient http;
+  http.setTimeout(90000);
+  http.begin(UPLOAD_URL);
+  http.addHeader("Content-Type", "video/x-msvideo");
+  int code = http.sendRequest("POST", &f, len);
+  f.close();
+  Serial.printf("[up] response: %d %s\n", code, http.getString().c_str());
+  http.end();
+  return code == 200;
+}
+
+/* ------------------------------ DVR (burst) ------------------------------- */
+void dvrWriterTask(void* param) {
+  (void)param;
+  int idx = 0;
+  while (idx < DVR_N_SHOTS && !dvrAbort) {
+    camera_fb_t* fb = NULL;
+    if (xQueueReceive(dvrQueue, &fb, pdMS_TO_TICKS(2000)) != pdTRUE) continue;
+    if (!fb) continue;
+    char path[32];
+    snprintf(path, sizeof(path), "/burst/raw%02d.bin", idx);
+    File f = SD_MMC.open(path, FILE_WRITE);
+    bool ok = f && (f.write(fb->buf, fb->len) == fb->len);
+    if (f) f.close();
+    esp_camera_fb_return(fb);
+    if (ok) { idx++; dvrFilesWritten = idx; }
+    else break;
+  }
+  xSemaphoreGive(dvrDoneSem);
+  vTaskDelete(NULL);
+}
+
+bool dvrCapture() {
+  Serial.println("[dvr] PHASE 1: CAPTURE");
+  dvrQueue = xQueueCreate(DVR_FB_DEPTH, sizeof(camera_fb_t*));
+  dvrDoneSem = xSemaphoreCreateBinary();
+  if (!dvrQueue || !dvrDoneSem) return false;
+  dvrFilesWritten = 0; dvrAbort = false; dvrFrameBytes = 0;
+
+  if (xTaskCreatePinnedToCore(dvrWriterTask, "dvrW", 8192, NULL, 1, NULL, 0) != pdPASS)
+    return false;
+
+  bool ok = true;
+  int captured = 0;
+  while (captured < DVR_N_SHOTS && ok) {
+    camera_fb_t* fb = esp_camera_fb_get();
+    if (!fb) { delay(200); continue; }
+    if (dvrFrameBytes == 0) {
+      dvrFrameBytes = fb->len;
+      Serial.printf("[dvr] frame size: %u\n", (unsigned)dvrFrameBytes);
+    }
+    if (xQueueSend(dvrQueue, &fb, pdMS_TO_TICKS(5000)) != pdTRUE) {
+      esp_camera_fb_return(fb); ok = false; break;
+    }
+    captured++;
+    Serial.printf("[dvr] captured %d/%d\n", captured, DVR_N_SHOTS);
+  }
+
+  if (ok) {
+    if (xSemaphoreTake(dvrDoneSem, pdMS_TO_TICKS(90000)) != pdTRUE) ok = false;
+  } else {
+    dvrAbort = true;
+    xSemaphoreTake(dvrDoneSem, pdMS_TO_TICKS(10000));
+  }
+  // drain
+  if (dvrQueue) {
+    camera_fb_t* fb;
+    while (xQueueReceive(dvrQueue, &fb, 0) == pdTRUE)
+      if (fb) esp_camera_fb_return(fb);
+    vQueueDelete(dvrQueue);
+  }
+  vSemaphoreDelete(dvrDoneSem);
+  dvrQueue = NULL;
+  Serial.printf("[dvr] PHASE 1 %s: %d/%d\n", ok?"OK":"FAIL", dvrFilesWritten, DVR_N_SHOTS);
+  return ok && dvrFilesWritten == DVR_N_SHOTS;
+}
+
+bool dvrEncode() {
+  Serial.println("[dvr] PHASE 2: ENCODE");
+  if (!dvrFrameBytes) return false;
+  // Borrow a camera buffer as scratch
+  camera_fb_t* scratch = esp_camera_fb_get();
+  if (!scratch || scratch->len < dvrFrameBytes) {
+    if (scratch) esp_camera_fb_return(scratch);
+    return false;
+  }
+  int done = 0;
+  for (int i = 0; i < DVR_N_SHOTS; i++) {
+    char rp[32], jp[32];
+    snprintf(rp, sizeof(rp), "/burst/raw%02d.bin", i);
+    snprintf(jp, sizeof(jp), "/burst/jpg%02d.jpg", i);
+    File fr = SD_MMC.open(rp, FILE_READ);
+    if (!fr) continue;
+    if (fr.read(scratch->buf, dvrFrameBytes) != dvrFrameBytes) { fr.close(); continue; }
+    fr.close();
+    uint8_t* jpg = NULL; size_t jl = 0;
+    if (!fmt2jpg(scratch->buf, dvrFrameBytes, DVR_W, DVR_H, PIXFORMAT_RGB565,
+                 DVR_JPEG_QUALITY, &jpg, &jl) || !jpg) continue;
+    File fj = SD_MMC.open(jp, FILE_WRITE);
+    bool w = fj && (fj.write(jpg, jl) == jl);
+    if (fj) fj.close();
+    free(jpg);
+    if (w) { done++; Serial.printf("[dvr] enc %d: %u bytes\n", i, (unsigned)jl); }
+  }
+  esp_camera_fb_return(scratch);
+  Serial.printf("[dvr] PHASE 2: %d/%d\n", done, DVR_N_SHOTS);
+  return done == DVR_N_SHOTS;
+}
+
+bool dvrStream() {
+  Serial.println("[dvr] PHASE 3: STREAM");
+  wifiEnsure();
+  if (WiFi.status() != WL_CONNECTED) return false;
+  int done = 0;
+  for (int i = 0; i < DVR_N_SHOTS; i++) {
+    char jp[32]; snprintf(jp, sizeof(jp), "/burst/jpg%02d.jpg", i);
+    File f = SD_MMC.open(jp, FILE_READ);
+    if (!f) continue;
+    size_t len = f.size();
+    uint8_t* buf = (uint8_t*)ps_malloc(len);
+    if (!buf) { f.close(); continue; }
+    f.read(buf, len); f.close();
+    HTTPClient http;
+    http.begin(DVR_URL);
+    http.addHeader("Content-Type", "image/jpeg");
+    http.setTimeout(15000);
+    int code = http.POST(buf, len);
+    http.end(); free(buf);
+    Serial.printf("[dvr] stream %d -> %d\n", i, code);
+    if (code == 200) done++;
+    delay(150);
+  }
+  Serial.printf("[dvr] PHASE 3: %d/%d\n", done, DVR_N_SHOTS);
+  return done == DVR_N_SHOTS;
+}
+
+void runDVR() {
+  dvrRunning = true; led(true);
+  Serial.println("\n[dvr] ===== START =====");
+  bool c = dvrCapture();
+  bool e = c ? dvrEncode() : false;
+  bool s = e ? dvrStream() : false;
+  Serial.printf("[dvr] ===== DONE: cap=%s enc=%s stream=%s =====\n",
+                c?"OK":"FAIL", e?"OK":"FAIL", s?"OK":"FAIL");
+  led(false); dvrRunning = false;
+}
+
+/* --------------------------------- Setup ---------------------------------- */
+void setup() {
+  Serial.begin(115200);
+  delay(1500);
+  Serial.println("\n[hob-merged] boot");
+  pinMode(LED_GPIO, OUTPUT); led(false);
+
+  if (!psramFound()) Serial.println("[warn] no PSRAM");
+  Serial.printf("[psram] %u\n", ESP.getFreePsram());
+
+  SD_MMC.setPins(SD_CLK, SD_CMD, SD_D0);
+  if (!SD_MMC.begin("/sdcard", true)) {
+    Serial.println("[sd] FAILED, halting"); while(1) delay(1000);
+  }
+  SD_MMC.mkdir("/burst");
+  Serial.println("[sd] ok");
+
+  // Camera stays initialized permanently (no deinit/fragmentation)
+  if (!initCamera()) {
+    Serial.println("[FATAL] cam"); while(1) delay(1000);
+  }
+
+  wifiEnsure();
+  mqtt.setServer(MQTT_HOST, MQTT_PORT);
+  mqtt.setCallback(mqttCallback);
+  mqttEnsure();
+  Serial.println("[hob-merged] ready. kitchen/hob=video, hob/cam_test=DVR burst");
+}
+
+/* ---------------------------------- Loop ---------------------------------- */
+void loop() {
+  wifiEnsure();
+  mqttEnsure();
+  mqtt.loop();
+
+  // DVR has priority (one-shot)
+  if (dvrRequested && !dvrRunning) {
+    dvrRequested = false;
+    runDVR();
+    return;
+  }
+
+  // Production: hob on -> video every 30s
+  if (!hobActive) { delay(200); return; }
+
+  unsigned long cycleStart = millis();
+  const char* clipPath = "/clip.avi";
+  if (recordClip(clipPath, CLIP_MS)) {
+    if (!uploadClip(clipPath)) {
+      Serial.println("[up] upload failed, will retry next cycle");
+    }
+    SD_MMC.remove(clipPath);
+  }
+
+  while (millis() - cycleStart < PERIOD_MS) {
+    mqtt.loop();
+    if (!hobActive || dvrRequested) break;
+    delay(150);
+  }
+}
